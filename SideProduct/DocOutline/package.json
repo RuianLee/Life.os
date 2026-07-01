@@ -1,0 +1,44 @@
+{
+  "name": "doc-outline",
+  "displayName": "Doc Outline",
+  "description": "Turn color-coded PDF highlights (annotated in Skim) into LaTeX content, grouped by color and scoped by TOC/page range.",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": ["Other"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "docOutline.addDocument",
+        "title": "Doc Outline: Add Document"
+      },
+      {
+        "command": "docOutline.syncHighlights",
+        "title": "Doc Outline: Sync Highlights from Skim"
+      },
+      {
+        "command": "docOutline.openPanel",
+        "title": "Doc Outline: Open Panel"
+      },
+      {
+        "command": "docOutline.pdfSpike",
+        "title": "Doc Outline: Run pdf.js Spike (debug)"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -w -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/vscode": "^1.90.0",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "pdfjs-dist": "^4.6.82"
+  }
+}
