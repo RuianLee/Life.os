@@ -1,6 +1,6 @@
 # Daily Sync（每日行程同步）
 
-一組 Claude Code skill，把 `行程/` 資料夾（截圖、課表、公告等雜亂的原始行程資料）整理成每日待辦，並同步到本機的 Calendar.app / Reminders.app / Notes.app（都經 iCloud 同步到 iPhone/iPad）。目前是純手動觸發（`/daily-sync`），沒有排程。使用說明見 `SOP/每日行程同步-SOP.md`；這份文件記錄的是「怎麼做出來的」與過程中踩到的坑。
+一組 Claude Code skill，把 `行程/` 資料夾（截圖、課表、公告等雜亂的原始行程資料）整理成每日待辦，並同步到本機的 Calendar.app / Reminders.app / Notes.app（都經 iCloud 同步到 iPhone/iPad）。目前是純手動觸發（`/daily-sync`），沒有排程。使用說明見 `使用手冊/每日行程同步-SOP.md`；這份文件記錄的是「怎麼做出來的」與過程中踩到的坑。
 
 ## 架構
 
@@ -106,7 +106,7 @@
 }
 ```
 
-原因：這個允許清單不只影響「排程自動跑」，也會影響你平常互動使用 Claude Code 時的權限詢問行為。把 `Write`/`Edit` 限制在 `每日整理/`、`行程/`、`垃圾桶/` 底下，而不是整個 repo，是為了不要因為做這個功能就順帶讓其他資料夾（例如 `召會生活/`、`Goal/`）的寫入變成「永遠不問就允許」。
+原因：這個允許清單不只影響「排程自動跑」，也會影響你平常互動使用 Claude Code 時的權限詢問行為。把 `Write`/`Edit` 限制在 `每日整理/`、`行程/`、`垃圾桶/` 底下，而不是整個 repo，是為了不要因為做這個功能就順帶讓其他資料夾（例如 `召會生活/`、`人生大方向/`）的寫入變成「永遠不問就允許」。
 
 值得注意：Claude 自己的 Bash 呼叫只有 `node .../sync.js` 這一條，內部的 `osascript` 呼叫是 `sync.js` 這個 Node 程式自己用 `child_process.execFileSync` 開的子程序，不是 Claude 的 Bash 工具直接呼叫，所以不需要（也沒有）額外把 `Bash(osascript:*)` 放進允許清單——這樣可以避免開放一個可以執行任意 AppleScript 的寬鬆權限。
 
