@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Write(每日整理/**)",
+      "Write(行程/**)",
+      "Write(垃圾桶/**)",
+      "Edit(行程/**)",
+      "Bash(mv:*)",
+      "Bash(mkdir:*)",
+      "Bash(date:*)",
+      "Bash(shasum:*)",
+      "Bash(node .claude/skills/ios-sync/scripts/sync.js:*)",
+      "Bash(node .claude/skills/notes-sync/scripts/sync_notes.js:*)"
+    ]
+  }
+}
