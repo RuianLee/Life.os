@@ -13,9 +13,8 @@
   - `家聚會/`（原 FamilyGathering）— 家聚會相關資料
   - `屬靈書報追求/`（原 SpiritualStudy）— 書報追求相關（目前為空）
 - **人生大方向/**（原 Goal）— 目標與方向筆記
-  - `興趣/interest.md`（原 Interest）
-  - `語言/language.md`（原 Language）
-  - `職涯/professional.md`（原 Professional）
+  - `人生大方向.md` — 總覽（興趣、語言、職涯方向、軟體相關、召會成全五大區塊）。原本分開的 `興趣/interest.md`、`語言/language.md`、`職涯/professional.md` 已整合進這份總覽，三個舊資料夾已刪除
+  - `可視化教學/`、`生產力/`、`派報/`、`英文/`、`書報追求/`、`健身/`、`剪輯|攝影/`、`軟體方法論/`、`軟體開發/`、`衝浪/`、`閱讀技巧/`、`韓語/`、`攀岩/` — 對應總覽中各主題的分類容器，目前為空。構想是仿照某本書「先列出人生 12 個主題」的做法收集資料，未來考慮在裡面實行卡片盒筆記法，尚在構思中
 - **快捷鍵/**（原 Keymap）— 工具快捷鍵筆記（如 `vscode.md`）
 - **行程/**（原 Schedule）— 每日行程的原始資料（截圖、課表、公告等），是 `daily-check` skill 的輸入來源；`schedule-log.md` 記錄每次整理/搬移的判斷，`.ios-sync-state.json` / `.notes-sync-state.json` 是不進 git 的本機同步狀態
 - **每日整理/<YYYY-MM-DD>/**（原 Daily）— `daily-check` 的產出：人讀的 `<日期>.md` + 結構化 `tasks.json`
