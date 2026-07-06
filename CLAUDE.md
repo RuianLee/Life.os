@@ -11,22 +11,25 @@
     - `第一次陪讀聖經就上手/` — 既有的讀經小組培訓資料（doc/pdf/pptx）
     - `製作自己的聖經陪讀教材/` — 正在製作中的個人陪讀教材，用 LaTeX（`.tex`）排版，例如 `約翰福音.tex`
   - `家聚會/`（原 FamilyGathering）— 家聚會相關資料
-  - `屬靈書報追求/`（原 SpiritualStudy）— 書報追求相關（目前為空）
-- **人生大方向/**（原 Goal）— 目標與方向筆記
+  - `書報追求/`（原 屬靈書報追求，原 SpiritualStudy）— 書報追求相關（目前為空）
+- **人生主題/**（原 人生大方向，原 Goal）— 目標與方向筆記
   - `人生大方向.md` — 總覽（興趣、語言、職涯方向、軟體相關、召會成全五大區塊）。原本分開的 `興趣/interest.md`、`語言/language.md`、`職涯/professional.md` 已整合進這份總覽，三個舊資料夾已刪除
   - `可視化教學/`、`生產力/`、`派報/`、`英文/`、`書報追求/`、`健身/`、`剪輯|攝影/`、`軟體方法論/`、`軟體開發/`、`衝浪/`、`閱讀技巧/`、`韓語/`、`攀岩/` — 對應總覽中各主題的分類容器，目前為空。構想是仿照某本書「先列出人生 12 個主題」的做法收集資料，未來考慮在裡面實行卡片盒筆記法，尚在構思中
-- **快捷鍵/**（原 Keymap）— 工具快捷鍵筆記（如 `vscode.md`）
-- **行程/**（原 Schedule）— 每日行程的原始資料（截圖、課表、公告等），是 `daily-check` skill 的輸入來源；`schedule-log.md` 記錄每次整理/搬移的判斷，`.ios-sync-state.json` / `.notes-sync-state.json` 是不進 git 的本機同步狀態
+- **工具快捷/**（原 快捷鍵，原 Keymap）— 工具快捷鍵筆記（如 `vscode.md`）
+- **時程行程/**（原 行程，原 Schedule）— 每日行程的原始資料（截圖、課表、公告等），是 `daily-check` skill 的輸入來源；`schedule-log.md` 記錄每次整理/搬移的判斷，`.apple-sync-state.json` / `.apple-sync-notes-state.json` 是不進 git 的本機同步狀態
+  - `青職短訓_預訓/`、`青職短訓_學員/` — 青職短訓分預備期與學員期兩階段，資料分開存放
+  - `休開/` — 文山一大區的休訓（讀經、新約總論）進度資料
 - **每日整理/<YYYY-MM-DD>/**（原 Daily）— `daily-check` 的產出：人讀的 `<日期>.md` + 結構化 `tasks.json`
 - **使用手冊/**（原 SOP）— 特定功能的操作手冊（給人看的「怎麼用」），例如 `每日行程同步-SOP.md`
 - **小專案/**（原 SideProduct）— 側專案
   - `技術棧.md` — 跨專案的技術堆疊總覽（Claude Code skill 自動化 / VSCode Extension / LaTeX 各用什麼技術），日後寫新小工具時的選型參考
   - `DocOutline/` — 自製 VSCode 擴充套件：把 Skim 標註的 PDF 螢光筆重點轉成 LaTeX 內容，用於製作陪讀教材。詳見 `小專案/DocOutline/ReadMe.md`。這是實際在跑的程式碼專案（package.json/tsconfig 等都寫死路徑），刻意保留英文資料夾名稱，沒有跟著整批改成中文
-  - `每日同步技術文件/`（原 DailySkillTech）— 每日行程同步那組 skill 的技術實作文件（架構、踩過的坑）
-- **工具/**（原 Tools）
+  - `同步排程到蘋果軟件/`（原 每日同步技術文件，原 DailySkillTech）— 每日行程同步那組 skill 的技術實作文件（架構、踩過的坑）
+  - `行事曆排程/`（原 AI行事曆排程系統）— 研究筆記階段，研究如何用比對邏輯（新資料 vs 既有行事曆事件、或 vs 標準行程樣板）減少 daily-sync 每次都要重新讓 LLM 判斷的 token 消耗，並搭配 VSCode 面板統一檢視/確認後再派發，目前尚未寫程式，見 `行事曆排程/研究筆記.md`
+- **工具棧/**（原 工具，原 Tools）
   - `LaTeX學習/`（原 Tools/Latex）— LaTeX 入門教學筆記
 - **垃圾桶/**（原 Trash）— `daily-check` 保守判斷後搬移的過期檔案，保留原始相對路徑，可手動找回
-- **.claude/skills/** — daily-check、daily-sync、ios-sync、notes-sync（每日行程自動化）、structure-sync（文件與資料夾結構同步）
+- **.claude/skills/** — daily-check、daily-sync、apple-sync（每日行程自動化，`apple-sync` 是 `ios-sync` 與 `notes-sync` 合併後的統一名稱，一次處理 Calendar/Reminders/Notes 三個 App）、structure-sync（文件與資料夾結構同步）
 
 ## 慣例
 

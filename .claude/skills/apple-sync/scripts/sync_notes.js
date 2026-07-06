@@ -20,7 +20,7 @@ const path = require('path');
 const { execFileSync } = require('child_process');
 
 const REPO_ROOT = path.resolve(__dirname, '../../../..');
-const STATE_PATH = path.join(REPO_ROOT, '行程', '.notes-sync-state.json');
+const STATE_PATH = path.join(REPO_ROOT, '行程', '.apple-sync-notes-state.json');
 const ACCOUNT_NAME = 'iCloud';
 const FOLDER_NAME = 'Life.os';
 
