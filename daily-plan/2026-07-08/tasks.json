@@ -1,0 +1,1172 @@
+[
+  {
+    "id": "4b2fcfa6634c",
+    "title": "報到當天繳交紙本奉獻同意書（需簽名）",
+    "date": "2026-07-08",
+    "time": null,
+    "type": "reminder",
+    "source_file": "行程/青職短訓_學員/短訓裝備檢查.png",
+    "notes": ""
+  },
+  {
+    "id": "09e0daa06b72",
+    "title": "今日讀經進度：新約總論第123~124篇；舊約摩一1~二16；新約啟十1~11",
+    "date": "2026-07-08",
+    "time": null,
+    "type": "reminder",
+    "source_file": "行程/休開/休訓讀經進度.jpg",
+    "notes": ""
+  },
+  {
+    "id": "302f07707cf4",
+    "title": "擔任J組組長（7/8~7/12全程）",
+    "date": "2026-07-08",
+    "time": null,
+    "type": "reminder",
+    "source_file": "時程行程/青職短訓_學員/image.png",
+    "notes": "2026年青職短訓學員飯食招待服事輪值表：J組組長為李睿恩"
+  },
+  {
+    "id": "6cce4c5f2da7",
+    "title": "今日讀經進度：新約總論第125篇；舊約摩三1~五27；新約啟十一1~15",
+    "date": "2026-07-09",
+    "time": null,
+    "type": "reminder",
+    "source_file": "行程/休開/休訓讀經進度.jpg",
+    "notes": ""
+  },
+  {
+    "id": "ff9d45948707",
+    "title": "幫廚服事（J組）",
+    "date": "2026-07-09",
+    "time": "10:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/image.png",
+    "notes": "幫廚輪值表 7/9(四) 10:30，J組：李睿恩"
+  },
+  {
+    "id": "7efbf343795a",
+    "title": "今日讀經進度：新約總論第126~127篇；舊約摩六1~九15；新約啟十一1~十二4",
+    "date": "2026-07-10",
+    "time": null,
+    "type": "reminder",
+    "source_file": "行程/休開/休訓讀經進度.jpg",
+    "notes": ""
+  },
+  {
+    "id": "7cf2b2902f12",
+    "title": "今日讀經進度：新約總論第128篇；舊約俄一1~拿一17；新約啟十二5~18",
+    "date": "2026-07-11",
+    "time": null,
+    "type": "reminder",
+    "source_file": "行程/休開/休訓讀經進度.jpg",
+    "notes": ""
+  },
+  {
+    "id": "501a98cbc074",
+    "title": "招待服事（J組）",
+    "date": "2026-07-11",
+    "time": "16:00",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/image.png",
+    "notes": "招待輪值表 7/11(六) #6 16:00~18:00，J組：李睿恩"
+  },
+  {
+    "id": "df50c5eaa60f",
+    "title": "今日讀經進度：新約總論第129~130篇；舊約拿二1~彌一16；新約啟十三1~18",
+    "date": "2026-07-12",
+    "time": null,
+    "type": "reminder",
+    "source_file": "行程/休開/休訓讀經進度.jpg",
+    "notes": ""
+  },
+  {
+    "id": "56e075ea3cf3",
+    "title": "今日讀經進度：新約總論第131篇；舊約彌二1~五15；新約啟十四1~12",
+    "date": "2026-07-13",
+    "time": null,
+    "type": "reminder",
+    "source_file": "行程/休開/休訓讀經進度.jpg",
+    "notes": ""
+  },
+  {
+    "id": "66b565f69ec4",
+    "title": "今日讀經進度：新約總論第132~133篇；舊約彌六1~鴻一15；新約啟十四13~十五8",
+    "date": "2026-07-14",
+    "time": null,
+    "type": "reminder",
+    "source_file": "時程行程/休開/休訓讀經進度.jpg",
+    "notes": ""
+  },
+  {
+    "id": "d3b2fa021c2d",
+    "title": "今日讀經進度：新約總論第134篇；舊約鴻二1~哈一17；新約啟十六1~21",
+    "date": "2026-07-15",
+    "time": null,
+    "type": "reminder",
+    "source_file": "時程行程/休開/休訓讀經進度.jpg",
+    "notes": ""
+  },
+  {
+    "id": "971530430b44",
+    "title": "起床",
+    "date": "2026-07-08",
+    "time": "05:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "d10cc2cec7d8",
+    "title": "呼求主名",
+    "date": "2026-07-08",
+    "time": "05:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "93e66c2f9108",
+    "title": "盥洗",
+    "date": "2026-07-08",
+    "time": "05:35",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "8898df7be61c",
+    "title": "早餐",
+    "date": "2026-07-08",
+    "time": "07:20",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "2a75e16b70c8",
+    "title": "午餐",
+    "date": "2026-07-08",
+    "time": "12:15",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "910f28236525",
+    "title": "晚餐/休息",
+    "date": "2026-07-08",
+    "time": "17:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "0fcc03d9ad69",
+    "title": "寢室晚禱",
+    "date": "2026-07-08",
+    "time": "22:10",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "fa6654b8408b",
+    "title": "寢室就寢",
+    "date": "2026-07-08",
+    "time": "22:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "a65f16cde92c",
+    "title": "晨興",
+    "date": "2026-07-08",
+    "time": "05:50",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "a1c94ce7dd59",
+    "title": "搬動及內務加強",
+    "date": "2026-07-08",
+    "time": "06:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "d948d5b86200",
+    "title": "整潔/課前豫備",
+    "date": "2026-07-08",
+    "time": "07:50",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "ef3883376156",
+    "title": "美地展暨教師交通",
+    "date": "2026-07-08",
+    "time": "08:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "5ce0c659c288",
+    "title": "休息（09:45）",
+    "date": "2026-07-08",
+    "time": "09:45",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "67478b981133",
+    "title": "報到流程各站豫備",
+    "date": "2026-07-08",
+    "time": "10:00",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "907ff2841807",
+    "title": "休息（11:15）",
+    "date": "2026-07-08",
+    "time": "11:15",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "57aee7bd9cf9",
+    "title": "個人禱告",
+    "date": "2026-07-08",
+    "time": "11:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "98bff6b673c4",
+    "title": "讀經",
+    "date": "2026-07-08",
+    "time": "11:55",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "b9b30de25e2b",
+    "title": "各單位團體禱告",
+    "date": "2026-07-08",
+    "time": "13:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "d6d383d1b4b3",
+    "title": "報到就位",
+    "date": "2026-07-08",
+    "time": "13:50",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "96c85f56fce6",
+    "title": "開放報到",
+    "date": "2026-07-08",
+    "time": "14:00",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "6dda5bfaf17b",
+    "title": "內務定位",
+    "date": "2026-07-08",
+    "time": "16:00",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "6677cd14bb6c",
+    "title": "開訓交通",
+    "date": "2026-07-08",
+    "time": "19:00",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "958ac94c7087",
+    "title": "生活手冊交通",
+    "date": "2026-07-08",
+    "time": "19:50",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "9acea6f7b4ec",
+    "title": "起床",
+    "date": "2026-07-09",
+    "time": "05:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "0df0eea9d9d3",
+    "title": "呼求主名",
+    "date": "2026-07-09",
+    "time": "05:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "52bccc3cffef",
+    "title": "盥洗",
+    "date": "2026-07-09",
+    "time": "05:35",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "6e30742552fd",
+    "title": "早餐",
+    "date": "2026-07-09",
+    "time": "07:20",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "2818d6792b7d",
+    "title": "午餐",
+    "date": "2026-07-09",
+    "time": "12:15",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "6fc4d85eb0ae",
+    "title": "晚餐/休息",
+    "date": "2026-07-09",
+    "time": "17:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "e5f145010307",
+    "title": "寢室晚禱",
+    "date": "2026-07-09",
+    "time": "22:10",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "1ec482f486fa",
+    "title": "寢室就寢",
+    "date": "2026-07-09",
+    "time": "22:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "059b3f854124",
+    "title": "晨興的啟示與操練",
+    "date": "2026-07-09",
+    "time": "05:50",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "b53310aa9cd9",
+    "title": "運動",
+    "date": "2026-07-09",
+    "time": "06:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "8586c19bca05",
+    "title": "整潔/課前豫備",
+    "date": "2026-07-09",
+    "time": "07:50",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "28d48b5cc677",
+    "title": "新約的職事—照著使徒教訓的惟一職事",
+    "date": "2026-07-09",
+    "time": "08:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "7f26b1194300",
+    "title": "休息（09:45）",
+    "date": "2026-07-09",
+    "time": "09:45",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "346548f66228",
+    "title": "神的經綸—神聖啟示的中心線",
+    "date": "2026-07-09",
+    "time": "10:00",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "48875219adc3",
+    "title": "休息（11:15）",
+    "date": "2026-07-09",
+    "time": "11:15",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "f1a477d9c761",
+    "title": "性格的認識",
+    "date": "2026-07-09",
+    "time": "11:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "a78ce7b2ec6c",
+    "title": "午休",
+    "date": "2026-07-09",
+    "time": "13:00",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "0c8036f88d9f",
+    "title": "個人禱告的啟示與操練",
+    "date": "2026-07-09",
+    "time": "13:55",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "3b27eeb4c7ff",
+    "title": "讀經",
+    "date": "2026-07-09",
+    "time": "14:40",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "b56325cecff1",
+    "title": "休息（15:10）",
+    "date": "2026-07-09",
+    "time": "15:10",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "4f3f063a941b",
+    "title": "新約福音祭司盡職的條件人生的奧祕示範與操練",
+    "date": "2026-07-09",
+    "time": "15:25",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "3663e1bd7df4",
+    "title": "福音開展",
+    "date": "2026-07-09",
+    "time": "16:25",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "d2210e150eed",
+    "title": "學員的基本態度",
+    "date": "2026-07-09",
+    "time": "18:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "d5e4bbda9f7c",
+    "title": "生活組相調",
+    "date": "2026-07-09",
+    "time": "19:50",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "3199241864d5",
+    "title": "起床",
+    "date": "2026-07-10",
+    "time": "05:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "003d5a12549c",
+    "title": "呼求主名",
+    "date": "2026-07-10",
+    "time": "05:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "d0d90722e612",
+    "title": "盥洗",
+    "date": "2026-07-10",
+    "time": "05:35",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "aef6c1e9c497",
+    "title": "早餐",
+    "date": "2026-07-10",
+    "time": "07:20",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "e98925e56695",
+    "title": "午餐",
+    "date": "2026-07-10",
+    "time": "12:15",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "9dfd7572d41a",
+    "title": "晚餐/休息",
+    "date": "2026-07-10",
+    "time": "17:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "f8b363b2eb8a",
+    "title": "寢室晚禱",
+    "date": "2026-07-10",
+    "time": "22:10",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "4f0b77842594",
+    "title": "寢室就寢",
+    "date": "2026-07-10",
+    "time": "22:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "adad5d595601",
+    "title": "晨興的啟示與操練",
+    "date": "2026-07-10",
+    "time": "05:50",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "a0bd5c9b774a",
+    "title": "運動",
+    "date": "2026-07-10",
+    "time": "06:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "8d1d150a8ace",
+    "title": "整潔/課前豫備",
+    "date": "2026-07-10",
+    "time": "07:50",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "505b4a8fa62f",
+    "title": "三一神三而一的神爲祂神聖的分賜完成祂永遠的經綸",
+    "date": "2026-07-10",
+    "time": "08:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "373f3614b43f",
+    "title": "休息（09:45）",
+    "date": "2026-07-10",
+    "time": "09:45",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "10f8f2e88b69",
+    "title": "包羅萬有的靈—賜生命複合七倍加強的靈",
+    "date": "2026-07-10",
+    "time": "10:00",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "51bba38cf3ae",
+    "title": "休息（11:15）",
+    "date": "2026-07-10",
+    "time": "11:15",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "6f5b02514869",
+    "title": "生命憑著規律而長大以致成熟並盡功用",
+    "date": "2026-07-10",
+    "time": "11:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "905e5b89cba0",
+    "title": "午休",
+    "date": "2026-07-10",
+    "time": "13:00",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "c8fa753247bc",
+    "title": "個人禱告的啟示與操練",
+    "date": "2026-07-10",
+    "time": "13:55",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "48a6715d0e6a",
+    "title": "讀經",
+    "date": "2026-07-10",
+    "time": "14:40",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "d04a97d131cd",
+    "title": "休息（15:10）",
+    "date": "2026-07-10",
+    "time": "15:10",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "be73fcfd97ea",
+    "title": "聖經研讀",
+    "date": "2026-07-10",
+    "time": "15:25",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "490e274af7ea",
+    "title": "福音開展",
+    "date": "2026-07-10",
+    "time": "16:25",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "0e1d070d6788",
+    "title": "申言的實行",
+    "date": "2026-07-10",
+    "time": "18:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "0bfca15c5386",
+    "title": "海外開展見證",
+    "date": "2026-07-10",
+    "time": "20:00",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "f8b0e2205f9e",
+    "title": "起床",
+    "date": "2026-07-11",
+    "time": "05:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "3f9aae6af293",
+    "title": "呼求主名",
+    "date": "2026-07-11",
+    "time": "05:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "f2ded8cb9559",
+    "title": "盥洗",
+    "date": "2026-07-11",
+    "time": "05:35",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "aadb704826ac",
+    "title": "早餐",
+    "date": "2026-07-11",
+    "time": "07:20",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "ef5d280ec40a",
+    "title": "午餐",
+    "date": "2026-07-11",
+    "time": "12:15",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "b72e2acc20bd",
+    "title": "晚餐/休息",
+    "date": "2026-07-11",
+    "time": "17:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "ff33a21b8ae6",
+    "title": "寢室晚禱",
+    "date": "2026-07-11",
+    "time": "22:10",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "eef082d7f39e",
+    "title": "寢室就寢",
+    "date": "2026-07-11",
+    "time": "22:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "bb8185dfa568",
+    "title": "晨興的啟示與操練",
+    "date": "2026-07-11",
+    "time": "05:50",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "d48b898522c2",
+    "title": "運動",
+    "date": "2026-07-11",
+    "time": "06:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "55d058941268",
+    "title": "整潔/課前豫備",
+    "date": "2026-07-11",
+    "time": "07:50",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "61aa2c5deecd",
+    "title": "基督的身體—三一神的生機體",
+    "date": "2026-07-11",
+    "time": "08:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "13cd3b9148c0",
+    "title": "休息（09:45）",
+    "date": "2026-07-11",
+    "time": "09:45",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "70931d9642bf",
+    "title": "新耶路撒冷—神永遠經綸的終極完成",
+    "date": "2026-07-11",
+    "time": "10:00",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "afbfb404b042",
+    "title": "休息（11:15）",
+    "date": "2026-07-11",
+    "time": "11:15",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "9a9f82bca827",
+    "title": "清理舊生活與奉獻為神的國",
+    "date": "2026-07-11",
+    "time": "11:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "5b5071acebea",
+    "title": "午休",
+    "date": "2026-07-11",
+    "time": "13:00",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "215214ceba37",
+    "title": "個人禱告的啟示與操練",
+    "date": "2026-07-11",
+    "time": "13:55",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "ea4dbe002445",
+    "title": "事奉異象與心志及受訓的需要",
+    "date": "2026-07-11",
+    "time": "14:40",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "002a4bff2a23",
+    "title": "福音開展/聯絡回訪",
+    "date": "2026-07-11",
+    "time": "16:25",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "dec2fc1ef917",
+    "title": "福音聚會",
+    "date": "2026-07-11",
+    "time": "18:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "cbabd427a1a1",
+    "title": "整理會場",
+    "date": "2026-07-11",
+    "time": "20:00",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "4282c2bdded3",
+    "title": "讀經",
+    "date": "2026-07-11",
+    "time": "20:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "06c86472b7c6",
+    "title": "起床",
+    "date": "2026-07-12",
+    "time": "05:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "0fddef617e88",
+    "title": "呼求主名",
+    "date": "2026-07-12",
+    "time": "05:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "fa8742998585",
+    "title": "盥洗",
+    "date": "2026-07-12",
+    "time": "05:35",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "1d4f0a835f52",
+    "title": "早餐",
+    "date": "2026-07-12",
+    "time": "07:20",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "e127be01e22d",
+    "title": "午餐",
+    "date": "2026-07-12",
+    "time": "12:15",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "70e9db12e9cc",
+    "title": "歸還寢具",
+    "date": "2026-07-12",
+    "time": "06:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "bdb17c9b2be3",
+    "title": "收拾行李",
+    "date": "2026-07-12",
+    "time": "07:50",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "9151ad2fcc3a",
+    "title": "大合照/默經/豫備展覽",
+    "date": "2026-07-12",
+    "time": "08:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": "電網組：李睿恩(Brian)、李家誠(Peter)"
+  },
+  {
+    "id": "6411cc7b90c7",
+    "title": "教師交通",
+    "date": "2026-07-12",
+    "time": "09:55",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "e2c760fbf2c5",
+    "title": "擘餅聚會",
+    "date": "2026-07-12",
+    "time": "10:35",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "f281b7585f6a",
+    "title": "退房",
+    "date": "2026-07-12",
+    "time": "11:15",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "2d4217fc358b",
+    "title": "展覽豫備",
+    "date": "2026-07-12",
+    "time": "13:00",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "9b24c062b179",
+    "title": "結訓展覽聚會",
+    "date": "2026-07-12",
+    "time": "13:30",
+    "type": "event",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "c8744a4c0ecc",
+    "title": "賦歸返家",
+    "date": "2026-07-12",
+    "time": null,
+    "type": "reminder",
+    "source_file": "時程行程/青職短訓_學員/短訓課程表.jpg",
+    "notes": ""
+  },
+  {
+    "id": "cd99dde2651f",
+    "title": "環衛組服事：第一節下課，第二堂可晚五分鐘",
+    "date": "2026-07-08",
+    "time": "09:45",
+    "type": "event",
+    "source_file": "使用者提供（無來源檔案，2026-07-08 口頭補充）",
+    "notes": "環衛組職責，睿恩每日固定服事"
+  },
+  {
+    "id": "154550c11d7c",
+    "title": "環衛組服事：1530複查",
+    "date": "2026-07-08",
+    "time": "15:30",
+    "type": "event",
+    "source_file": "使用者提供（無來源檔案，2026-07-08 口頭補充）",
+    "notes": "環衛組職責，睿恩每日固定服事"
+  },
+  {
+    "id": "67829e532f1a",
+    "title": "環衛組服事：第一節下課，第二堂可晚五分鐘",
+    "date": "2026-07-09",
+    "time": "09:45",
+    "type": "event",
+    "source_file": "使用者提供（無來源檔案，2026-07-08 口頭補充）",
+    "notes": "環衛組職責，睿恩每日固定服事"
+  },
+  {
+    "id": "4511414966ae",
+    "title": "環衛組服事：1530複查",
+    "date": "2026-07-09",
+    "time": "15:30",
+    "type": "event",
+    "source_file": "使用者提供（無來源檔案，2026-07-08 口頭補充）",
+    "notes": "環衛組職責，睿恩每日固定服事"
+  },
+  {
+    "id": "c4f5d89b56bd",
+    "title": "環衛組服事：第一節下課，第二堂可晚五分鐘",
+    "date": "2026-07-10",
+    "time": "09:45",
+    "type": "event",
+    "source_file": "使用者提供（無來源檔案，2026-07-08 口頭補充）",
+    "notes": "環衛組職責，睿恩每日固定服事"
+  },
+  {
+    "id": "eb2d97bb27fa",
+    "title": "環衛組服事：1530複查",
+    "date": "2026-07-10",
+    "time": "15:30",
+    "type": "event",
+    "source_file": "使用者提供（無來源檔案，2026-07-08 口頭補充）",
+    "notes": "環衛組職責，睿恩每日固定服事"
+  },
+  {
+    "id": "2c8742de292a",
+    "title": "環衛組服事：第一節下課，第二堂可晚五分鐘",
+    "date": "2026-07-11",
+    "time": "09:45",
+    "type": "event",
+    "source_file": "使用者提供（無來源檔案，2026-07-08 口頭補充）",
+    "notes": "環衛組職責，睿恩每日固定服事"
+  },
+  {
+    "id": "84a59b6245f8",
+    "title": "環衛組服事：1530複查",
+    "date": "2026-07-11",
+    "time": "15:30",
+    "type": "event",
+    "source_file": "使用者提供（無來源檔案，2026-07-08 口頭補充）",
+    "notes": "環衛組職責，睿恩每日固定服事"
+  },
+  {
+    "id": "aebcbb833407",
+    "title": "環衛組服事：第一節下課，第二堂可晚五分鐘",
+    "date": "2026-07-12",
+    "time": "09:45",
+    "type": "event",
+    "source_file": "使用者提供（無來源檔案，2026-07-08 口頭補充）",
+    "notes": "環衛組職責，睿恩每日固定服事"
+  },
+  {
+    "id": "3c9d9329ed06",
+    "title": "環衛組服事：1530複查",
+    "date": "2026-07-12",
+    "time": "15:30",
+    "type": "event",
+    "source_file": "使用者提供（無來源檔案，2026-07-08 口頭補充）",
+    "notes": "環衛組職責，睿恩每日固定服事"
+  }
+]

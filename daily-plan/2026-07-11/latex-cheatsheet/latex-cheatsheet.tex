@@ -1,0 +1,134 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{parskip}
+
+\geometry{margin=2.5cm}
+\setmainfont{Helvetica}
+\setCJKmainfont{PingFang TC}
+
+\title{LaTeX 格式範例}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+% ===== 文件標題 =====
+\section*{文件標題}
+用 \verb|\title{}|、\verb|\author{}|、\verb|\date{}| 搭配 \verb|\maketitle| 產生本頁最上方那樣的標題區塊（本檔案開頭已示範）。
+
+\bigskip
+\hrule
+\bigskip
+
+% ===== 大標題（編號） =====
+\section{大標題（編號）：約翰福音陪讀計畫}
+用 \verb|\section{}|，會自動編號，例如「1」。
+
+\subsection{中標題（編號）：第一週進度}
+用 \verb|\subsection{}|，會接續上層編號，例如「1.1」。
+
+一般段落文字直接打字即可，不需要額外指令。例如：這學期打算用四週的時間，把約翰福音第一章到第四章讀完，每週安排一次陪讀小組討論默想問題。
+
+% ===== 大標題（不編號） =====
+\section*{大標題（不編號）：簡介}
+用 \verb|\section*{}|，加了星號就不會自動編號，適合「簡介」「附錄」這類不需要序號的章節。
+
+\subsection*{中標題（不編號）：背景說明}
+用 \verb|\subsection*{}|，同樣不編號。
+
+\bigskip
+\hrule
+\bigskip
+
+% ===== 編號清單 =====
+\section*{編號清單 enumerate}
+預設寫法：
+
+\begin{enumerate}
+  \item 讀經前先禱告，求聖靈光照。
+  \item 通讀當週經文範圍，不查註釋。
+  \item 帶著默想問題再讀一次。
+\end{enumerate}
+
+自訂編號（例如強制用「1. 2. 3.」而非預設樣式），加 \verb|leftmargin=*, label=\arabic*.|：
+
+\begin{enumerate}[leftmargin=*, label=\arabic*.]
+  \item 「太初有道，道與神同在，道就是神」（約1:1）——你如何理解「道」這個概念？
+  \item 約翰說他「不是那光，乃是要為光作見證」（約1:8）。你如何為光作見證？
+\end{enumerate}
+
+% ===== 條列清單 =====
+\section*{條列清單 itemize}
+\begin{itemize}
+  \item 陪讀時間：每週三晚上 8 點
+  \item 陪讀地點：線上會議室
+  \item 準備事項：提前讀完當週經文
+\end{itemize}
+
+\bigskip
+\hrule
+\bigskip
+
+% ===== 文字樣式 =====
+\section*{文字樣式：粗體、斜體、底線}
+粗體用 \verb|\textbf{}|：\textbf{關鍵經文要牢記在心。}
+
+斜體用 \verb|\textit{}|：\textit{道成了肉身，住在我們中間。}
+
+底線用 \verb|\underline{}|：\underline{本週默想重點：認識道成肉身的意義。}
+
+\bigskip
+\hrule
+\bigskip
+
+% ===== 引用區塊 =====
+\section*{引用區塊 quote}
+用 \verb|quote| 環境呈現整段引文，會自動縮排：
+
+\begin{quote}
+「神愛世人，甚至將他的獨生子賜給他們，叫一切信他的，不至滅亡，反得永生。」（約翰福音 3:16）
+\end{quote}
+
+\bigskip
+\hrule
+\bigskip
+
+% ===== 換行與分隔線 =====
+\section*{強調換行與分隔線：bigskip + hrule}
+\verb|\bigskip| 會留一段較大的垂直空白，\verb|\hrule| 會畫一條水平線，常搭配用來分隔不同段落內容（本檔案各節之間就是這樣分隔的）。
+
+\bigskip
+\hrule
+\bigskip
+
+% ===== 註腳 =====
+\section*{註腳 footnote}
+用 \verb|\footnote{}| 在文字後方加註解說明\footnote{例如補充「道」（Logos）在希臘文中原意是「話語」或「理性」，約翰借用這個概念指向基督。}，編譯後會自動編號並顯示在當頁下方。
+
+\bigskip
+\hrule
+\bigskip
+
+% ===== 表格 =====
+\section*{表格 tabular}
+基本表格寫法，\verb|{|c|c|c|}| 中每個 \verb|c| 代表一欄置中對齊，\verb||| 代表畫直線：
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+週次 & 經文範圍 & 主題 \\
+\hline
+第一週 & 約 1:1--18 & 道成肉身 \\
+第二週 & 約 1:19--51 & 施洗約翰與首批門徒 \\
+第三週 & 約 2:1--25 & 迦拿的婚宴 \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{document}

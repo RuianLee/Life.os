@@ -2,8 +2,8 @@
 'use strict';
 
 /**
- * 讀取 daily-check 產出的 tasks.json，把任務同步到本機的 Calendar.app / Reminders.app
- * （會經 iCloud 自動同步到 iPhone）。用 行程/.apple-sync-state.json 記錄
+ * 讀取 sub-daily-check 產出的 tasks.json，把任務同步到本機的 Calendar.app / Reminders.app
+ * （會經 iCloud 自動同步到 iPhone）。用 管理行程/.apple-sync-state.json 記錄
  * 「task id -> Apple 端 id」的對應，重跑時比對 contentHash 決定新增/更新/略過，
  * 避免每次執行都重複建立事件。
  *
@@ -16,7 +16,7 @@ const crypto = require('crypto');
 const { execFileSync } = require('child_process');
 
 const REPO_ROOT = path.resolve(__dirname, '../../../..');
-const STATE_PATH = path.join(REPO_ROOT, '行程', '.apple-sync-state.json');
+const STATE_PATH = path.join(REPO_ROOT, '管理行程', '.apple-sync-state.json');
 const CALENDAR_NAME = 'Life.os';
 const REMINDER_LIST_NAME = 'Life.os';
 const REMINDER_ACCOUNT_NAME = 'iCloud';
