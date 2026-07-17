@@ -28,6 +28,13 @@ jobs:
       - name: Install Claude Code CLI
         run: npm install -g @anthropic-ai/claude-code
 
+      - name: Trust workspace for Claude Code
+        # 全新 runner 每次都要重新信任這個目錄，不然 .claude/settings.json 的 permissions.allow
+        # 會被忽略、非互動環境又沒辦法跳出確認對話框讓人按「同意」，會卡死。
+        run: |
+          mkdir -p ~/.claude
+          printf '{"projects": {"%s": {"hasTrustDialogAccepted": true}}}' "$GITHUB_WORKSPACE" > ~/.claude.json
+
       - name: Run core-cloud-sync
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
