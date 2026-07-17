@@ -11,6 +11,6 @@ description: 雲端版「一次跑完」入口——依序執行 sub-daily-check
    node .claude/skills/sub-caldav-sync/scripts/sync_caldav.js "daily-plan/<today>/tasks.json"
    ```
    需要 `APPLE_ID_EMAIL`、`APPLE_APP_SPECIFIC_PASSWORD` 兩個環境變數（GitHub Actions 裡從 Secrets 帶入，手動測試時使用者自己 export）。只會把有明確時間的任務（`type: "event"`）寫進 iCloud「daily」行事曆，Reminders 跟 Notes 不會被這條路徑處理（原因見 sub-caldav-sync 的 SKILL.md 與腳本檔頭註解）。
-3. 如果這次執行有任何檔案變動（`daily-plan/`、`schedule/計劃總覽.md`、`schedule/schedule-log.md`、`schedule/.caldav-sync-state.json`），commit 並 push 回目前分支——這一步只有在 GitHub Actions 環境（`CI` 環境變數存在）才需要做，因為 runner 每次都是全新環境，不 commit 回去下次就會失憶；使用者在本機手動跑這個 skill 時不用自動 commit，跟本機習慣一致，交給使用者自己決定要不要 commit。
+**不要自己執行 `git add`/`git commit`/`git push`**（這些指令不在 `.claude/settings.json` 的允許清單裡，故意不給——跟本機版 `/core-daily-sync` 一樣，commit 交給人或外層流程決定，這個 skill 只負責把檔案準備好）。在 GitHub Actions 裡，commit + push 是 `.github/workflows/cloud-sync.yml` 最後一個獨立步驟做的事，不需要也不應該由這個 skill 處理；本機手動跑也一樣，把 commit 留給使用者自己按。
 
 最後用 2-3 句話總結：今天整理了哪些待辦、Calendar 新增/更新/略過/清除各幾筆。並提醒使用者：Reminders 跟 Notes 沒有被這條雲端路徑處理，想要完整同步（含 Reminders/Notes）仍然要在本機手動跑 `/core-daily-sync`。不要重複貼原始輸出。
