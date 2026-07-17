@@ -1,0 +1,8 @@
+{
+  "name": "sub-caldav-sync",
+  "private": true,
+  "description": "雲端版 Apple 同步：透過 CalDAV 直連 iCloud 寫入 Calendar/Reminders，不需要本機 Mac。",
+  "dependencies": {
+    "tsdav": "^2.3.1"
+  }
+}

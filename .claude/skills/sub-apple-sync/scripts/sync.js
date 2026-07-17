@@ -16,10 +16,19 @@ const crypto = require('crypto');
 const { execFileSync } = require('child_process');
 
 const REPO_ROOT = path.resolve(__dirname, '../../../..');
-const STATE_PATH = path.join(REPO_ROOT, '管理行程', '.apple-sync-state.json');
-const CALENDAR_NAME = 'Life.os';
-const REMINDER_LIST_NAME = 'Life.os';
+const STATE_PATH = path.join(REPO_ROOT, 'schedule', '.apple-sync-state.json');
+// 雲端版 sub-caldav-sync 的狀態檔：兩條路徑都會寫進同一個 iCloud「daily」行事曆，
+// 這裡拿來判斷「這個事件是不是雲端已經同步過了」，避免同一天雲端跑過一次、
+// 使用者稍晚又手動跑一次本機版，導致 Calendar 出現重複事件。
+const CALDAV_STATE_PATH = path.join(REPO_ROOT, 'schedule', '.caldav-sync-state.json');
+const CALENDAR_NAME = 'daily';
 const REMINDER_ACCOUNT_NAME = 'iCloud';
+
+// Reminders 不再全部塞進單一「Life.os」清單，改成依任務自己的 date 開清單
+// （例如「2026-07-16」），這樣 Reminders.app 裡每天的待辦自然分開，不會愈疊愈長。
+function reminderListName(task) {
+  return task.date;
+}
 
 function readJSON(filePath, fallback) {
   if (!fs.existsSync(filePath)) return fallback;
@@ -64,23 +73,31 @@ function dateAssignLines(varName, dateStr, timeStr) {
 }
 
 function ensureCalendarExists() {
-  runAppleScript(`
+  // Calendar.app 的 AppleScript 字典沒有「account」這個詞彙（跟 Reminders/Notes 不同），
+  // 沒辦法用 `tell account "iCloud"` 限定新建的行事曆要落在哪個帳號——實測 `make new calendar`
+  // 沒有指定帳號時，一律建在本機「我的Mac」而非 iCloud，事件根本不會同步到 iPhone。
+  // 所以這裡不自動建立，只檢查存在與否；「daily」這個 iCloud 行事曆需要使用者手動建立一次
+  // （Calendar.app > File > New Calendar > 選 iCloud 帳號 > 命名為 daily）。
+  const exists = runAppleScript(`
 tell application "Calendar"
-  if not (exists calendar "${escapeAS(CALENDAR_NAME)}") then
-    make new calendar with properties {name:"${escapeAS(CALENDAR_NAME)}"}
-  end if
+  return (exists calendar "${escapeAS(CALENDAR_NAME)}")
 end tell
 `);
+  if (exists.trim() !== 'true') {
+    throw new Error(
+      `找不到「${CALENDAR_NAME}」行事曆。請先在 Calendar.app 手動建立一個 iCloud 帳號底下、名稱為「${CALENDAR_NAME}」的行事曆（File > New Calendar，帳號選 iCloud），再重跑一次。`
+    );
+  }
 }
 
-function ensureReminderListExists() {
+function ensureReminderListExists(listName) {
   // 跟 Notes.app 一樣的坑：直接對 application 層級 make new list 會噴
   // -1728「無法取得部分物件」，必須先 tell account 才能建立。
   runAppleScript(`
 tell application "Reminders"
-  if not (exists list "${escapeAS(REMINDER_LIST_NAME)}") then
+  if not (exists list "${escapeAS(listName)}") then
     tell account "${escapeAS(REMINDER_ACCOUNT_NAME)}"
-      make new list with properties {name:"${escapeAS(REMINDER_LIST_NAME)}"}
+      make new list with properties {name:"${escapeAS(listName)}"}
     end tell
   end if
 end tell
@@ -151,12 +168,17 @@ end tell
 }
 
 function createReminder(task) {
+  const listName = reminderListName(task);
+  ensureReminderListExists(listName);
+  // 沒有明確時間的任務用 allday due date（而不是 due date 硬設成 00:00），
+  // 這樣 Reminders.app 顯示的才是「整天」而不是一個凌晨 12:00 的假時間點。
+  const dueProp = task.time ? 'due date' : 'allday due date';
   const script = `
 set dueDate to current date
 ${dateAssignLines('dueDate', task.date, task.time)}
 tell application "Reminders"
-  tell list "${escapeAS(REMINDER_LIST_NAME)}"
-    set newReminder to make new reminder with properties {name:"${escapeAS(task.title)}", due date:dueDate, body:"${escapeAS(task.notes)}"}
+  tell list "${escapeAS(listName)}"
+    set newReminder to make new reminder with properties {name:"${escapeAS(task.title)}", ${dueProp}:dueDate, body:"${escapeAS(task.notes)}"}
     return id of newReminder
   end tell
 end tell
@@ -165,14 +187,22 @@ end tell
 }
 
 function updateReminder(appleId, task) {
+  const listName = reminderListName(task);
+  ensureReminderListExists(listName);
+  const dueProp = task.time ? 'due date' : 'allday due date';
+  // 用 id 全域找 reminder（不必先 tell 進某個 list），找到後比對目前所在的
+  // list 跟這次算出來的目標 list 是否一致，不一致就用 move 搬過去——
+  // 這是既有任務因為日期沒變、只是內容更新時，順便把它從舊的「Life.os」
+  // 大清單搬進對應日期清單的唯一機會（id 若日期真的變了，本來就會是新 id）。
   const script = `
 set dueDate to current date
 ${dateAssignLines('dueDate', task.date, task.time)}
 tell application "Reminders"
-  tell list "${escapeAS(REMINDER_LIST_NAME)}"
-    set theReminder to (first reminder whose id is "${escapeAS(appleId)}")
-    set properties of theReminder to {name:"${escapeAS(task.title)}", due date:dueDate, body:"${escapeAS(task.notes)}"}
-  end tell
+  set theReminder to (first reminder whose id is "${escapeAS(appleId)}")
+  set properties of theReminder to {name:"${escapeAS(task.title)}", ${dueProp}:dueDate, body:"${escapeAS(task.notes)}"}
+  if (name of container of theReminder) is not "${escapeAS(listName)}" then
+    move theReminder to list "${escapeAS(listName)}"
+  end if
 end tell
 `;
   try {
@@ -183,12 +213,37 @@ end tell
   }
 }
 
+function ensureReminderInList(appleId, task) {
+  // 內容沒變（contentHash 相同）就不會走 updateReminder，但舊資料可能還停在
+  // 改版前的單一「Life.os」清單、且用的是舊版「due date 硬設 00:00」而不是
+  // allday due date，所以略過分支也要單獨補做一次搬清單＋修正整天旗標，
+  // 否則舊任務會永遠卡在 Life.os、永遠顯示凌晨 12:00，等不到「日期變了產生
+  // 新 id」這種自然遷移的機會。
+  const listName = reminderListName(task);
+  ensureReminderListExists(listName);
+  const dueProp = task.time ? 'due date' : 'allday due date';
+  const script = `
+set dueDate to current date
+${dateAssignLines('dueDate', task.date, task.time)}
+tell application "Reminders"
+  set theReminder to (first reminder whose id is "${escapeAS(appleId)}")
+  set ${dueProp} of theReminder to dueDate
+  if (name of container of theReminder) is not "${escapeAS(listName)}" then
+    move theReminder to list "${escapeAS(listName)}"
+  end if
+end tell
+`;
+  try {
+    runAppleScript(script);
+  } catch (e) {
+    // 找不到就算了，交給下次 update/create 分支處理
+  }
+}
+
 function completeReminder(appleId) {
   const script = `
 tell application "Reminders"
-  tell list "${escapeAS(REMINDER_LIST_NAME)}"
-    set completed of (first reminder whose id is "${escapeAS(appleId)}") to true
-  end tell
+  set completed of (first reminder whose id is "${escapeAS(appleId)}") to true
 end tell
 `;
   try {
@@ -213,9 +268,10 @@ function main() {
   }
 
   ensureCalendarExists();
-  ensureReminderListExists();
+  // Reminders 清單改成依任務日期動態建立，見 createReminder/updateReminder。
 
   const state = readJSON(STATE_PATH, {});
+  const caldavState = readJSON(CALDAV_STATE_PATH, {});
   const seenIds = new Set();
 
   let created = 0;
@@ -225,6 +281,14 @@ function main() {
 
   for (const task of tasks) {
     seenIds.add(task.id);
+
+    // 這個事件雲端版已經同步過、本機這邊還沒建過任何紀錄 -> 視為已同步，直接略過，
+    // 不然雲端跑過一次、使用者稍晚手動跑本機版，會在 Calendar 建出重複事件。
+    if (task.type === 'event' && caldavState[task.id] && !state[task.id]) {
+      skipped++;
+      continue;
+    }
+
     const hash = contentHash(task);
     const existing = state[task.id];
 
@@ -236,6 +300,9 @@ function main() {
     }
 
     if (existing.contentHash === hash) {
+      if (existing.type === 'reminder') {
+        ensureReminderInList(existing.appleId, task);
+      }
       skipped++;
       continue;
     }
