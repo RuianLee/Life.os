@@ -1,0 +1,272 @@
+[
+  {
+    "id": "3c05f28d746b",
+    "title": "生活紀錄、生產力養成（40分鐘）",
+    "date": "2026-07-16",
+    "time": null,
+    "type": "reminder",
+    "source_file": "second-brain/主題統整.md",
+    "notes": ""
+  },
+  {
+    "id": "809566e67073",
+    "title": "書報、聖經（40/20分鐘）",
+    "date": "2026-07-16",
+    "time": null,
+    "type": "reminder",
+    "source_file": "second-brain/主題統整.md",
+    "notes": ""
+  },
+  {
+    "id": "30ec5b907be3",
+    "title": "運動健身培養（40分鐘）",
+    "date": "2026-07-16",
+    "time": null,
+    "type": "reminder",
+    "source_file": "second-brain/主題統整.md",
+    "notes": ""
+  },
+  {
+    "id": "60ddc533136d",
+    "title": "韓文、英文（40/20分鐘）",
+    "date": "2026-07-16",
+    "time": null,
+    "type": "reminder",
+    "source_file": "second-brain/主題統整.md",
+    "notes": ""
+  },
+  {
+    "id": "aaeba712f208",
+    "title": "軟體框架、部落格、設計模式（360/25分鐘）",
+    "date": "2026-07-16",
+    "time": null,
+    "type": "reminder",
+    "source_file": "second-brain/主題統整.md",
+    "notes": ""
+  },
+  {
+    "id": "cb5949bab695",
+    "title": "召會生活（other）",
+    "date": "2026-07-16",
+    "time": null,
+    "type": "reminder",
+    "source_file": "second-brain/主題統整.md",
+    "notes": ""
+  },
+  {
+    "id": "195e4fcad2c8",
+    "title": "今日讀經進度：新約總論第135~136篇；舊約哈二1~三19；新約啟十七1~18",
+    "date": "2026-07-16",
+    "time": null,
+    "type": "reminder",
+    "source_file": "schedule/休開/休訓讀經進度.jpg",
+    "notes": ""
+  },
+  {
+    "id": "84fe6011185d",
+    "title": "禱研背講 第三篇",
+    "date": "2026-07-16",
+    "time": "06:30",
+    "type": "event",
+    "source_file": "schedule/2026召會生活/夏季訓練.png",
+    "notes": "06:30-07:30，八十七及八十九會所/十會所"
+  },
+  {
+    "id": "6cf0e813b701",
+    "title": "今日讀經進度：新約總論第137篇；舊約番一1~二15；新約啟十八1~十九4",
+    "date": "2026-07-17",
+    "time": null,
+    "type": "reminder",
+    "source_file": "schedule/休開/休訓讀經進度.jpg",
+    "notes": ""
+  },
+  {
+    "id": "0e40926e389e",
+    "title": "禱研背講 第四篇",
+    "date": "2026-07-17",
+    "time": "06:30",
+    "type": "event",
+    "source_file": "schedule/2026召會生活/夏季訓練.png",
+    "notes": "06:30-07:30，八十七及八十九會所/十會所"
+  },
+  {
+    "id": "55a5d508b5d9",
+    "title": "今日讀經進度：新約總論第138篇；舊約番三1~該一15；新約啟十九5~16",
+    "date": "2026-07-18",
+    "time": null,
+    "type": "reminder",
+    "source_file": "schedule/休開/休訓讀經進度.jpg",
+    "notes": ""
+  },
+  {
+    "id": "d219bdc158a0",
+    "title": "禱研背講 第五篇",
+    "date": "2026-07-18",
+    "time": "06:30",
+    "type": "event",
+    "source_file": "schedule/2026召會生活/夏季訓練.png",
+    "notes": "06:30-07:30，八十七及八十九會所/十會所"
+  },
+  {
+    "id": "da6b0d484ae2",
+    "title": "現場訓練（萬芳會場）第一篇 觀看錄影",
+    "date": "2026-07-18",
+    "time": "09:30",
+    "type": "event",
+    "source_file": "schedule/2026召會生活/夏季訓練.png",
+    "notes": "09:30-10:50"
+  },
+  {
+    "id": "a4eaed57eba1",
+    "title": "現場訓練（萬芳會場）第二篇",
+    "date": "2026-07-18",
+    "time": "11:10",
+    "type": "event",
+    "source_file": "schedule/2026召會生活/夏季訓練.png",
+    "notes": "11:10-12:30"
+  },
+  {
+    "id": "72694eb231fc",
+    "title": "現場訓練（萬芳會場）第三篇",
+    "date": "2026-07-18",
+    "time": "14:00",
+    "type": "event",
+    "source_file": "schedule/2026召會生活/夏季訓練.png",
+    "notes": "14:00-15:20"
+  },
+  {
+    "id": "525ebdc5cfbe",
+    "title": "今日讀經進度：新約總論第139篇；舊約該二1~亞一21；新約啟十九17~二十6",
+    "date": "2026-07-19",
+    "time": null,
+    "type": "reminder",
+    "source_file": "schedule/休開/休訓讀經進度.jpg",
+    "notes": ""
+  },
+  {
+    "id": "6395b29bdbaf",
+    "title": "現場訓練（景美會場）擘餅",
+    "date": "2026-07-19",
+    "time": "09:30",
+    "type": "event",
+    "source_file": "schedule/2026召會生活/夏季訓練.png",
+    "notes": "09:30-10:10"
+  },
+  {
+    "id": "b062751e0343",
+    "title": "現場訓練（景美會場）第四篇（不唱詩）",
+    "date": "2026-07-19",
+    "time": "10:10",
+    "type": "event",
+    "source_file": "schedule/2026召會生活/夏季訓練.png",
+    "notes": "10:10-11:30"
+  },
+  {
+    "id": "bef6909e144b",
+    "title": "現場訓練（景美會場）第五篇",
+    "date": "2026-07-19",
+    "time": "13:00",
+    "type": "event",
+    "source_file": "schedule/2026召會生活/夏季訓練.png",
+    "notes": "13:00-14:20"
+  },
+  {
+    "id": "d0ddfee0615f",
+    "title": "今日讀經進度：新約總論第140篇；舊約亞二1~三10；新約啟二十7~15",
+    "date": "2026-07-20",
+    "time": null,
+    "type": "reminder",
+    "source_file": "schedule/休開/休訓讀經進度.jpg",
+    "notes": ""
+  },
+  {
+    "id": "c934ad77d933",
+    "title": "禱研背講 第六篇",
+    "date": "2026-07-20",
+    "time": "06:30",
+    "type": "event",
+    "source_file": "schedule/2026召會生活/夏季訓練.png",
+    "notes": "06:30-07:30，八十七及八十九會所/十會所"
+  },
+  {
+    "id": "8de751459104",
+    "title": "景美場服事：一樓引導",
+    "date": "2026-07-20",
+    "time": "06:30",
+    "type": "event",
+    "source_file": "schedule/休開/景美PSRP.png",
+    "notes": "景美場禱研背講服事配搭：李睿恩擔任一樓引導，引導聖徒至聚會地點，注意陌生人"
+  },
+  {
+    "id": "14172f2a2823",
+    "title": "今日讀經進度：新約總論第141~142篇；舊約亞四1~六15；新約啟二一1~2",
+    "date": "2026-07-21",
+    "time": null,
+    "type": "reminder",
+    "source_file": "schedule/休開/休訓讀經進度.jpg",
+    "notes": ""
+  },
+  {
+    "id": "56dc796496b1",
+    "title": "禱研背講 第七篇",
+    "date": "2026-07-21",
+    "time": "06:30",
+    "type": "event",
+    "source_file": "schedule/2026召會生活/夏季訓練.png",
+    "notes": "06:30-07:30，八十七及八十九會所/十會所"
+  },
+  {
+    "id": "93e06878500c",
+    "title": "現場訓練（萬芳會場）第六篇 觀看錄影",
+    "date": "2026-07-21",
+    "time": "20:00",
+    "type": "event",
+    "source_file": "schedule/2026召會生活/夏季訓練.png",
+    "notes": "20:00-21:20"
+  },
+  {
+    "id": "d9dec3f45e80",
+    "title": "今日讀經進度：新約總論第143篇；舊約亞七1~九17；新約啟二一3~13",
+    "date": "2026-07-22",
+    "time": null,
+    "type": "reminder",
+    "source_file": "schedule/休開/休訓讀經進度.jpg",
+    "notes": ""
+  },
+  {
+    "id": "1943493386ac",
+    "title": "禱研背講 第八篇",
+    "date": "2026-07-22",
+    "time": "06:30",
+    "type": "event",
+    "source_file": "schedule/2026召會生活/夏季訓練.png",
+    "notes": "06:30-07:30，八十七及八十九會所/十會所"
+  },
+  {
+    "id": "4e20c38fe6f8",
+    "title": "景美場服事：招待",
+    "date": "2026-07-22",
+    "time": "06:30",
+    "type": "event",
+    "source_file": "schedule/休開/景美PSRP.png",
+    "notes": "景美場禱研背講服事配搭：李睿恩擔任招待，預備簽到表、茶水、講者早餐、統計現場人數"
+  },
+  {
+    "id": "16aa50993d1e",
+    "title": "今日讀經進度：新約總論第144篇；舊約亞十1~十三9；新約啟二一14~21",
+    "date": "2026-07-23",
+    "time": null,
+    "type": "reminder",
+    "source_file": "schedule/休開/休訓讀經進度.jpg",
+    "notes": ""
+  },
+  {
+    "id": "b3e0173492cf",
+    "title": "禱研背講 第九篇",
+    "date": "2026-07-23",
+    "time": "06:30",
+    "type": "event",
+    "source_file": "schedule/2026召會生活/夏季訓練.png",
+    "notes": "06:30-07:30，八十七及八十九會所/十會所"
+  }
+]
