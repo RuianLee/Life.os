@@ -2,7 +2,7 @@
 'use strict';
 
 /**
- * 把 每日重點整理/<date>/tasks.json 整理成一則 Notes.app 筆記（iCloud 帳號、"Life.os" 資料夾），
+ * 把 每日重點整理/<date>/tasks.json 整理成一則 Notes.app 筆記（iCloud 帳號、"daily-sync" 資料夾），
  * 方便只帶平板時也能打開備忘錄看今天/這週待辦。
  *
  * 重要限制：Notes.app 沒有可透過 AppleScript/JXA 建立「真正可勾選 checklist」的官方支援
@@ -25,7 +25,7 @@ const { execFileSync } = require('child_process');
 const REPO_ROOT = path.resolve(__dirname, '../../../..');
 const STATE_PATH = path.join(REPO_ROOT, 'schedule', '.apple-sync-notes-state.json');
 const ACCOUNT_NAME = 'iCloud';
-const FOLDER_NAME = 'daily';
+const FOLDER_NAME = 'daily-sync';
 
 function readJSON(filePath, fallback) {
   if (!fs.existsSync(filePath)) return fallback;

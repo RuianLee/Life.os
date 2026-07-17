@@ -7,7 +7,11 @@
  * 「task id -> Apple 端 id」的對應，重跑時比對 contentHash 決定新增/更新/略過，
  * 避免每次執行都重複建立事件。
  *
- * Usage: node sync.js <path-to-tasks.json>
+ * Usage: node sync.js <path-to-tasks.json> [--reminders-only]
+ *
+ * --reminders-only：跳過 Calendar 完全不碰（不新建/不更新/不刪除既有事件），只處理
+ * Reminders。給「只想快速同步 Reminders/Notes、Calendar 已經交給雲端 core-cloud-sync
+ * 處理過」的場景用。
  */
 
 const fs = require('fs');
@@ -23,11 +27,13 @@ const STATE_PATH = path.join(REPO_ROOT, 'schedule', '.apple-sync-state.json');
 const CALDAV_STATE_PATH = path.join(REPO_ROOT, 'schedule', '.caldav-sync-state.json');
 const CALENDAR_NAME = 'daily';
 const REMINDER_ACCOUNT_NAME = 'iCloud';
-
-// Reminders 不再全部塞進單一「Life.os」清單，改成依任務自己的 date 開清單
-// （例如「2026-07-16」），這樣 Reminders.app 裡每天的待辦自然分開，不會愈疊愈長。
+// Reminders 全部寫進固定的「daily-sync」清單（不再依任務日期動態開清單）。
+// 舊版曾經改成依日期分清單避免愈疊愈長，但 Reminders.app 本來就有「已完成・清除」
+// 可以手動清掉已完成項目，所以改回單一清單，方便跟 Notes 那邊固定的「daily-sync」
+// 資料夾一致，也對齊使用者手動建好的 daily-sync 清單。
+const REMINDER_LIST_NAME = 'daily-sync';
 function reminderListName(task) {
-  return task.date;
+  return REMINDER_LIST_NAME;
 }
 
 function readJSON(filePath, fallback) {
@@ -192,8 +198,9 @@ function updateReminder(appleId, task) {
   const dueProp = task.time ? 'due date' : 'allday due date';
   // 用 id 全域找 reminder（不必先 tell 進某個 list），找到後比對目前所在的
   // list 跟這次算出來的目標 list 是否一致，不一致就用 move 搬過去——
-  // 這是既有任務因為日期沒變、只是內容更新時，順便把它從舊的「Life.os」
-  // 大清單搬進對應日期清單的唯一機會（id 若日期真的變了，本來就會是新 id）。
+  // 這是既有任務因為日期沒變、只是內容更新時，順便把它從舊的「Life.os」或
+  // 舊版依日期分開的清單搬進固定 daily-sync 清單的唯一機會（id 若日期真的變了，
+  // 本來就會是新 id）。
   const script = `
 set dueDate to current date
 ${dateAssignLines('dueDate', task.date, task.time)}
@@ -215,10 +222,10 @@ end tell
 
 function ensureReminderInList(appleId, task) {
   // 內容沒變（contentHash 相同）就不會走 updateReminder，但舊資料可能還停在
-  // 改版前的單一「Life.os」清單、且用的是舊版「due date 硬設 00:00」而不是
-  // allday due date，所以略過分支也要單獨補做一次搬清單＋修正整天旗標，
-  // 否則舊任務會永遠卡在 Life.os、永遠顯示凌晨 12:00，等不到「日期變了產生
-  // 新 id」這種自然遷移的機會。
+  // 改版前的「Life.os」單一清單或依日期分開的舊清單、且用的是舊版「due date
+  // 硬設 00:00」而不是 allday due date，所以略過分支也要單獨補做一次搬清單＋
+  // 修正整天旗標，否則舊任務會永遠卡在舊清單、永遠顯示凌晨 12:00，等不到
+  // 「日期變了產生新 id」這種自然遷移的機會。
   const listName = reminderListName(task);
   ensureReminderListExists(listName);
   const dueProp = task.time ? 'due date' : 'allday due date';
@@ -235,8 +242,12 @@ end tell
 `;
   try {
     runAppleScript(script);
+    return true;
   } catch (e) {
-    // 找不到就算了，交給下次 update/create 分支處理
+    // 找不到：通常是舊清單整個被手動刪除，連帶把裡面的提醒也刪了
+    // （這正是本次把 Reminders 改成固定 daily-sync 清單時遇到的情況）。
+    // 回傳 false，讓呼叫端在同一輪直接補建，不要留著一個指向空氣的 appleId。
+    return false;
   }
 }
 
@@ -260,6 +271,8 @@ function main() {
     console.error('Usage: node sync.js <path-to-tasks.json>');
     process.exit(1);
   }
+  const remindersOnly = process.argv.includes('--reminders-only');
+
   const tasksPath = path.resolve(tasksArg);
   const tasks = readJSON(tasksPath, null);
   if (!tasks) {
@@ -267,8 +280,9 @@ function main() {
     process.exit(1);
   }
 
-  ensureCalendarExists();
-  // Reminders 清單改成依任務日期動態建立，見 createReminder/updateReminder。
+  if (!remindersOnly) {
+    ensureCalendarExists();
+  }
 
   const state = readJSON(STATE_PATH, {});
   const caldavState = readJSON(CALDAV_STATE_PATH, {});
@@ -281,6 +295,12 @@ function main() {
 
   for (const task of tasks) {
     seenIds.add(task.id);
+
+    // --reminders-only：Calendar 完全不管，連既有事件都不動——只是把它的 id 加進
+    // seenIds 保護起來，不讓下面的反向清理誤判成「消失了」而刪掉。
+    if (remindersOnly && task.type === 'event') {
+      continue;
+    }
 
     // 這個事件雲端版已經同步過、本機這邊還沒建過任何紀錄 -> 視為已同步，直接略過，
     // 不然雲端跑過一次、使用者稍晚手動跑本機版，會在 Calendar 建出重複事件。
@@ -300,8 +320,11 @@ function main() {
     }
 
     if (existing.contentHash === hash) {
-      if (existing.type === 'reminder') {
-        ensureReminderInList(existing.appleId, task);
+      if (existing.type === 'reminder' && !ensureReminderInList(existing.appleId, task)) {
+        const appleId = createReminder(task);
+        state[task.id] = { contentHash: hash, type: task.type, appleId, updatedAt: new Date().toISOString() };
+        created++;
+        continue;
       }
       skipped++;
       continue;
@@ -326,6 +349,8 @@ function main() {
   for (const id of Object.keys(state)) {
     if (seenIds.has(id)) continue;
     const entry = state[id];
+    // --reminders-only：不管過期/消失的事件，留給雲端或下次完整跑的人處理。
+    if (remindersOnly && entry.type === 'event') continue;
     if (entry.type === 'event') {
       deleteCalendarEvent(entry.appleId);
     } else {
@@ -337,7 +362,7 @@ function main() {
 
   writeJSON(STATE_PATH, state);
 
-  console.log(`ios-sync 完成：新增 ${created} 筆、更新 ${updated} 筆、略過 ${skipped} 筆（未變動）、清除 ${removed} 筆。`);
+  console.log(`ios-sync 完成：新增 ${created} 筆、更新 ${updated} 筆、略過 ${skipped} 筆（未變動）、清除 ${removed} 筆${remindersOnly ? '（Calendar 未處理）' : ''}。`);
 }
 
 main();

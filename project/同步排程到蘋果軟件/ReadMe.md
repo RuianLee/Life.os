@@ -119,4 +119,4 @@
 - Notes 不支援真正可勾選的 checklist（見上）。
 - dedup 用「標題文字」當 id 的一部分，措辭微調會被當成不同任務（見「資料契約」）。
 - 目前純手動觸發，沒有背景排程。
-- Calendar/Reminders/Notes 都用同一個固定名稱「Life.os」（行事曆/清單/資料夾），沒有做「多帳號/多裝置」的彈性——這是個人單機工具，夠用就好。
+- Calendar/Reminders/Notes 都用固定的容器名稱（Calendar 行事曆叫「daily」，Reminders 清單／Notes 資料夾都叫「daily-sync」），沒有做「多帳號/多裝置」的彈性——這是個人單機工具，夠用就好。
