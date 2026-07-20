@@ -1,16 +1,16 @@
 ---
 name: sub-caldav-sync
-description: 把 sub-daily-check 產出的 daily-plan/<date>/tasks.json 裡「有明確時間」的任務，透過 CalDAV 直連寫進 iCloud 的 Calendar（不需要本機 Mac、不用 osascript）。用 schedule/.caldav-sync-state.json 做去重，重跑不會建立重複事件。刻意不處理 Reminders 跟 Notes（都是實測過的 iCloud 限制，見腳本檔頭註解），這兩項留給本機的 sub-apple-sync 處理。
+description: 把 sub-daily-check 產出的 02-zettelkasten/03-Calendar/<date>/tasks.json 裡「有明確時間」的任務，透過 CalDAV 直連寫進 iCloud 的 Calendar（不需要本機 Mac、不用 osascript）。用 schedule/.caldav-sync-state.json 做去重，重跑不會建立重複事件。刻意不處理 Reminders 跟 Notes（都是實測過的 iCloud 限制，見腳本檔頭註解），這兩項留給本機的 sub-apple-sync 處理。
 ---
 
 執行雲端版 Calendar 同步。
 
 ## 步驟
 
-1. 找出對應的 `daily-plan/<date>/tasks.json`（`date` 由呼叫端決定，通常是 `date +%F`）。如果不存在，提醒使用者先跑過 `sub-daily-check` 產生它。
+1. 找出對應的 `02-zettelkasten/03-Calendar/<date>/tasks.json`（`date` 由呼叫端決定，通常是 `date +%F`）。如果不存在，提醒使用者先跑過 `sub-daily-check` 產生它。
 2. 執行：
    ```bash
-   node .claude/skills/sub-caldav-sync/scripts/sync_caldav.js "daily-plan/<date>/tasks.json"
+   node .claude/skills/sub-caldav-sync/scripts/sync_caldav.js "02-zettelkasten/03-Calendar/<date>/tasks.json"
    ```
    需要環境變數 `APPLE_ID_EMAIL`、`APPLE_APP_SPECIFIC_PASSWORD`（iCloud 帳號信箱與「App 專用密碼」，在 appleid.apple.com > 登入與安全性 > App 專用密碼 產生，不是登入密碼）。手動測試時使用者要自己在終端機 export 這兩個變數；在 GitHub Actions 裡則是從 Secrets 帶入。
 3. 腳本邏輯（不需要你自己判斷要不要重複建立）：

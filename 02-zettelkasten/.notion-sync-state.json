@@ -1,0 +1,90 @@
+{
+  "_structurePages": {
+    "Inbox": "3a36830c-2de7-81e0-a244-cb0cf2e6d1bb",
+    "Atlas": "3a36830c-2de7-81ad-8e68-d94c5f85ba6e",
+    "Calendar": "3a36830c-2de7-81ee-8f62-f0a657177a8a",
+    "Card": "3a36830c-2de7-81bc-8330-e5fbf1ad1bc0",
+    "Extra": "3a36830c-2de7-8119-acc1-dd3df27974e4",
+    "Source": "3a36830c-2de7-8100-a03a-e75bef85512a",
+    "Space": "3a36830c-2de7-8198-9323-c019c5e06838"
+  },
+  "_databaseId": "d9f0d791-14cb-4906-bb6d-f6c2cfdd9d4d",
+  "_dataSourceId": "9e8198e1-6804-4a1a-a4ab-f4c440b9dee6",
+  "01-Inbox/Notion同步測試卡片.md": {
+    "pageId": "3a36830c-2de7-815e-85d7-d99acfb780aa",
+    "hash": "54999a2e4c617a737c8c63fb5c63c1e78b24fb2f",
+    "content": "---\ntitle: Notion同步測試卡片\ndate: 2026-07-20\ntype: 靈感筆記\ntags: [pilot測試]\nnotion_url: https://www.notion.so/3a36830c2de7815e85d7d99acfb780aa\n---\n\n## Notion同步測試卡片\n\n這張卡片是 sub-notion-sync pilot 的測試內容，用來驗證 `push` 能不能正確把 repo 的新卡片同步到 Notion。\n\n- 這行測試條列項目\n- 這行也是\n\n跑完 `push` 之後，應該會在 Notion 的 Inbox 資料庫裡看到這張卡片，屬性（Title/Type/Tags）跟這裡的 frontmatter 對應。\n\n測試",
+    "images": {},
+    "direction": "push",
+    "updatedAt": "2026-07-20T14:20:23.267Z"
+  },
+  "01-Inbox/Notion與Repo職責分配.md": {
+    "pageId": "3a36830c-2de7-81d3-9dda-f19fbe599c65",
+    "hash": "b8cce8720e81d2e6bedc760adc2f4c3411d6d897",
+    "content": "---\ntitle: Notion與Repo職責分配\r\ndate: 2026-07-20\r\ntype: 靈感筆記\r\ntags: [MJ-視覺化溝通]\nnotion_url: https://www.notion.so/3a36830c2de781d39ddaf19fbe599c65\n---\n\r\n1. 開 repo 看一份線性 markdown，堪用但要自己在腦中組織\r\n2. 可以做成 Table/Board 視角，一眼看完成度、按主題分組\r\n3. 有 Notion：只分享單一 page，畫面好看、範圍可控\r\n4. 有 Notion：可以做 filter/group by 主題，但這也不是 pilot 範圍\r\n5. 透過 Notion 新增MD檔案到 Repo，因為 Notion 的寫作體驗更好，可以透過 UI 直接看寫出來可看性\r\n6. 透過 Notion 更新檔案狀態到 Repo，因為我覺得任務追蹤與狀態異動的動作 Notion 的體驗更好\r\n7. 我透過 Repo 上到 Notion 單純是我不想付費給 Notion 使用 AI，我可以先在 IDE 這邊跟 AI 合作完說，在 IDE 我可以不用在開發環境跟寫文件的環境中切換\r\n\r\n## Repo 與 Notion 權責\r\n1. 任務有沒有「派送」出去\r\n\r\n### Repo\r\n1. 控制要不要把某個任務「派送」出去\r\n   - Notion、Apple Calendar/Reminders\r\n   \r\n### Notion\r\n1. 派送出去之後的狀態（完成與否、備註）\r\n2. 不需要進 Repo 的任務，就在 Notion 上面處理\r\n\r\n## 筆記流(雙向)\r\n1. 沒有「誰控制狀態」的問題\r\n2. 單純是「內容搬運＋轉檔」（Notion blocks ↔ Markdown）\r\n\r\n### Repo => Notion\r\n1. 透過 IDE 與 AI　的合作，把筆記生出來\r\n2. 筆記可能是文件或是使用手冊\r\n\r\n### Notion => Repo\r\n1. 我從網站上爬下來的網頁，自己加上筆記(Save to Notion)\r\n2. 我自己在 Notion 上面邊看邊寫的，寫出來好閱讀不錯，放回 Repo\r\n\r\n測試",
+    "images": {},
+    "direction": "push",
+    "updatedAt": "2026-07-20T14:20:32.568Z"
+  },
+  "01-Inbox/泳道圖是甚麼.md": {
+    "pageId": "3a36830c-2de7-81a7-81db-ccddd59fb5fa",
+    "hash": "ab3885157323c1394f5cc6633695a30bb6c502d8",
+    "content": "---\ntitle: 泳道圖是甚麼\r\ndate: 2026-07-20\r\ntype: 靈感筆記\r\ntags: [MJ-視覺化溝通]\nnotion_url: https://www.notion.so/3a36830c2de781a781dbccddd59fb5fa\n---\n\r\n## 泳道圖\r\n- 用於如何協調不同的工作流程，將專案或構想呈現出來\r\n- 直觀地呈現涉及多位人員、多個地點或多個參與者的流程\r\n  - 方便呈現多個參與者\r\n- 清楚標示特定步驟、決策或行動的責任方\r\n  - 步驟責任歸屬清楚\r\n- 能保持與一般流程圖同等的彈性\r\n\r\n> 基底是流程圖，略看可以看清楚有幾位參與者，細看可以看特定步驟與責任歸屬\r\n",
+    "images": {},
+    "direction": "push",
+    "updatedAt": "2026-07-20T14:22:19.074Z"
+  },
+  "01-Inbox/教學影片1.md": {
+    "pageId": "3a36830c-2de7-8120-adc2-e68e96589731",
+    "hash": "2c6459c2034febc9cfd258707d8b1711f55a3377",
+    "content": "---\ntitle: 教學影片1\ndate: 2026-07-20\ntype: 文獻筆記\ntags: [卡片盒筆記法]\nnotion_url: https://www.notion.so/3a36830c2de78120adc2e68e96589731\n---\n\n# 教學影片5 - Notion 實作示範：Part I. 寫卡片\n\n> 來源：《卡片盒筆記法的數位實戰指南》教學影片5（作者：朱騏）。這篇筆記只涵蓋影片的「Part I. 寫卡片」章節；Part II 存卡片、Part III 用卡片之後另外整理。\n\n影片分成三段講解如何用 Notion 實作卡片盒筆記法：Part 1 寫卡片、Part 2 存卡片、Part 3 用卡片，分別對應書中的三大章節。這篇筆記整理的是 Part 1，內容又分兩個子段落：① 快速建立 ACCESS 資料夾架構、② 批次處理 Inbox。\n\n## 一、快速建立 ACCESS 資料夾架構\n\n- **ACCESS 資料夾＝Notion 的一個 Page** — Notion 裡沒有「資料夾」這個概念，凡是提到資料夾，都是指 Notion 裡的一個 Page。\n  ![01_ACCESS資料夾-對應Notion的Page.png](01_ACCESS資料夾-對應Notion的Page.png)\n- **實作方式：直接建立六個 Page** — 分別是 Atlas、Calendar、Card、Extra、Source、Space，再加一個 Inbox，總共七個 Page，對應 ACCESS 資料夾架構。\n  ![02_ACCESS資料夾-建立六個Page.png](02_ACCESS資料夾-建立六個Page.png)\n\n## 二、Inbox 概念\n\nInbox 的用途：平常寫新筆記時，不需要每寫完一則就立刻決定它該歸到哪裡，先全部丟進 Inbox，等有空的時候再一次性整理分類。\n\n- **不要每則都馬上分類** — 每寫完一則筆記就立刻想它該放哪裡。\n  ![03_Inbox概念-不要每則都馬上分類.png](03_Inbox概念-不要每則都馬上分類.png)\n- **馬上分類很浪費時間** — 這樣做其實非常浪費時間。\n  ![04_Inbox概念-馬上分類很浪費時間.png](04_Inbox概念-馬上分類很浪費時間.png)\n- **新筆記先存到 Inbox** — 比較好的做法：新建立的筆記檔案都先存放到 Inbox 資料夾裡，所以 Inbox 裡通常會是各種不同種類筆記亂放在一起的狀態。\n  ![05_Inbox概念-新筆記先存到Inbox.png](05_Inbox概念-新筆記先存到Inbox.png)\n- **有空再一次處理** — 等有時間的時候，再一次性把 Inbox 裡的筆記處理、分類掉。\n  ![06_Inbox概念-有空再一次處理.png](06_Inbox概念-有空再一次處理.png)\n\n### 批次處理 Inbox 範例\n\n用實際案例示範每種筆記該歸到哪個 Page：\n\n- **Daily Note → Calendar** — 每日記/日記類的筆記，依書中架構應該放到 Calendar。\n  ![07_批次處理Inbox-dailynote移到Calendar.png](07_批次處理Inbox-dailynote移到Calendar.png)\n- **專案筆記 → Space > Project** — 例如「寫一本用 Obsidian 實作卡片盒筆記法的書」這種要寫長文章／書籍的專案類筆記，依 ACCESS 架構應歸到 Space 底下的 Project。\n  ![08_批次處理Inbox-專案移到SpaceProject.png](08_批次處理Inbox-專案移到SpaceProject.png)\n- **關於 Notion 的 Database** — Notion 有 Database（資料庫）這種管理結構，可以用 Database 管理每一則筆記檔案，也可以不用 Database、直接把檔案丟進 Page 裡，兩種都可以（影片範本用的是 Database 管理）。用 Database 時要注意：把筆記檔案移動過來，可能會停在 Database 外面，要再手動移動一次才會真的進到 Database 裡。\n  ![09_批次處理Inbox-Notion的Database概念.png](09_批次處理Inbox-Notion的Database概念.png)\n- **Daily note template → Extra > Template** — 範本類筆記依書中架構應歸到 Extra 底下的 Template。\n  ![10_批次處理Inbox-Template移到Template.png](10_批次處理Inbox-Template移到Template.png)\n- **MOC → Atlas > MOC** — MOC（地圖型筆記，用來做分類匯總，用卡片時會再解釋）應歸到 Atlas 底下的 MOC。\n  ![11_批次處理Inbox-MOC移到AtlasMOC.png](11_批次處理Inbox-MOC移到AtlasMOC.png)\n- **處理完，只留一則示範寫卡片** — Inbox 批次分類完後，故意保留「網路文章」這一則沒分類，留著示範接下來怎麼寫卡片。\n  ![12_批次處理Inbox-完成後只剩網路文章.png](12_批次處理Inbox-完成後只剩網路文章.png)\n\n## 三、如何寫卡片：HQ&A 筆記法\n\n閱讀網路文章或實體書籍時，先開一則新筆記專門記錄這篇文章／書籍（把原始網址放進 Notion，變成一張卡的樣子，上面再做筆記）。示範的做法是 **HQ&A 筆記法**：\n\n1. **H（Highlight 畫線）** — 對文章裡特別有感覺的段落畫線／highlight，複製貼到 Notion，因為內容是引用別人寫的，用 Notion 的 quote（引用）功能貼進來，不是自己寫的文字。\n2. **Q（自問）** — 在引用下方寫一個問題，例如「這個段落讓我想到什麼？」。\n3. **A（自答）** — 針對這個問題寫下自己的答案／解釋，是自己腦中對這段落的想法。\n\n## 四、正式寫卡片\n\n在 Inbox 底下新增一個新的 Page，把它當成一張新卡片。寫作順序是**先寫內容，再寫標題**：\n\n- **卡片內容**：必須是自己寫出來的文字（不是引用），因此把前面 HQ&A 筆記法裡自己寫的段落複製貼過來。\n- **Reference（出處）**：在內容下方記錄這則卡片參考自哪篇文章／哪本書的哪個段落。如果來源已經有專門的筆記在記錄（例如前面那則網路文章筆記），不用重複貼整篇網頁內容，改用**內部連結**指過去即可，兩種打法都可以：\n  1. 打兩個左括號 `[[`，選要連結的頁面。\n  2. 打 `@`，選 \"link to page\"，一樣指向要連結的頁面。\n- **卡片標題**：用一句話寫，讓人只看標題就能立刻知道這張卡片在講什麼。範例：「不要用大詞來解釋事情，那只會顯露自己的無知」——用平實的話取代抽象大詞的標題寫法示範。\n\n寫完卡片後，Part 1 寫卡片段落結束，接下來是 Part 2 存卡片。\n",
+    "images": {
+      "01_ACCESS資料夾-對應Notion的Page.png": "3a36830c-2de7-81a8-be2a-00b2f4c6b999",
+      "02_ACCESS資料夾-建立六個Page.png": "3a36830c-2de7-8155-8de8-00b2a74610eb",
+      "03_Inbox概念-不要每則都馬上分類.png": "3a36830c-2de7-8122-9da0-00b200dd5b9b",
+      "04_Inbox概念-馬上分類很浪費時間.png": "3a36830c-2de7-815b-be3a-00b2e8197441",
+      "05_Inbox概念-新筆記先存到Inbox.png": "3a36830c-2de7-817c-aa7d-00b22fb1f956",
+      "06_Inbox概念-有空再一次處理.png": "3a36830c-2de7-816e-ad10-00b2c7c038f3",
+      "07_批次處理Inbox-dailynote移到Calendar.png": "3a36830c-2de7-818e-9826-00b2b883592c",
+      "08_批次處理Inbox-專案移到SpaceProject.png": "3a36830c-2de7-8162-8120-00b2bb0c1270",
+      "09_批次處理Inbox-Notion的Database概念.png": "3a36830c-2de7-81de-866c-00b21a964035",
+      "10_批次處理Inbox-Template移到Template.png": "3a36830c-2de7-8118-bdb5-00b28a10089a",
+      "11_批次處理Inbox-MOC移到AtlasMOC.png": "3a36830c-2de7-81f1-a5bb-00b21da9b6b8",
+      "12_批次處理Inbox-完成後只剩網路文章.png": "3a36830c-2de7-8123-b09b-00b274907e93"
+    },
+    "direction": "push",
+    "updatedAt": "2026-07-20T14:21:23.216Z"
+  },
+  "01-Inbox/Zod 對於 markdown 是甚麼.md": {
+    "pageId": "3a36830c-2de7-8171-8c14-fd573b953f25",
+    "hash": "1f03a5dd6a59bc202e8b31e8fe665975520b4e07",
+    "content": "---\ntitle: Zod 對於 markdown 是甚麼\r\ndate: 2026-07-20\r\ntype: 靈感筆記\r\ntags: [靈感筆記]\nnotion_url: https://www.notion.so/3a36830c2de781718c14fd573b953f25\n---\n\r\n## Zod\r\n- 在 Markdown 生態系中，它主要被用來驗證 Markdown 檔案頂部的結構化資料（Frontmatter）。\r\n  - 開發者能確保 Markdown 筆記或內容集合的資料格式正確無誤。\r\n\r\n## 什麼是 Frontmatter？\r\n- Markdown 檔案（.md）開頭經常會使用 --- 包起來的區塊，用來記錄文章的屬性（例如：標題、作者、日期、標籤）。\r\n- ![alt text](image.png)\r\n\r\n##  Zod 的作用：內容綱要 (Schema) 驗證\r\n- Frontmatter 是純文字，若欄位填錯（例如把日期 date 寫成字串，或遺漏了必填的 title），程式執行時容易出錯\r\n- 使用 Zod 即可定義嚴格的規則：定義規則：規定 title 必須是字串，date 必須是合法的時間格式，tags 必須是陣列。\r\n- 自動報錯：若 Markdown 的 Frontmatter 不符合 Zod 的定義，程式會直接拋出錯誤，確保內容品質。",
+    "images": {
+      "image.png": "3a36830c-2de7-81a6-8fbf-00b24a447863"
+    },
+    "direction": "push",
+    "updatedAt": "2026-07-20T14:21:10.305Z"
+  },
+  "01-Inbox/顛覆舊觀念的筆記和寫作法.md": {
+    "pageId": "3a36830c-2de7-812a-a716-fdd8a0d35e13",
+    "hash": "ff9a911099418d5c4e7f1751621fabcd8ab477a5",
+    "content": "---\ntitle: 心得筆記\r\ndate: 2026-07-20\r\ntype: 文獻筆記\r\ntags: [讀書筆記寫作法]\nnotion_url: https://www.notion.so/3a36830c2de7812aa716fdd8a0d35e13\n---\n\r\n# 讀書筆記怎麼寫？顛覆舊觀念的筆記和寫作法\r\n\r\n> 受眾：\r\n> 1. 想做筆記卻不知道該怎麼做\r\n> 2. 做了筆記卻不知道，如何變成一篇心得\r\n> 3. 想知道做法：一問一答法、節錄評論法\r\n\r\n## (0:05) 為什麼要學這個\r\n\r\n以前讀過的書容易記不牢，想做筆記卻不知道該畫線、抄原文還是寫心得；就算做了筆記，也不知道怎麼把它變成一篇心得。這份分享針對這三個困擾。\r\n\r\n## (0:51) 今天會聊的兩大主題\r\n\r\n- 01 做筆記的方法（兩個小技巧）\r\n- 02 寫心得的方法（善用你的筆記）\r\n![01_概覽-兩大主題.png](01_概覽-兩大主題.png)\r\n\r\n## (1:18)–(2:29) 做筆記的三個訣竅\r\n\r\n方法要簡單好上手；不仰賴靈感，而是對既有的資訊（畫線、標籤處）做出討論；做筆記＝複習＋學習＋寫作，同一個動作同時帶來三個好處。\r\n![02_做筆記訣竅-簡單上手不靠靈感.png](02_做筆記訣竅-簡單上手不靠靈感.png)\r\n\r\n## (2:57)–(4:15) 節錄評論法的框架\r\n\r\n回顧書籤 → 抄寫原文（頁數＋原文）→ 發表評論（自己的話和想法）。抄錄的過程本身就是複習，也是第一輪篩選：不重要或後面已被解答的標籤可以直接跳過不抄。\r\n![03_節錄評論法-三欄框架.png](03_節錄評論法-三欄框架.png)\r\n\r\n## (4:15)–(5:31) 節錄評論法：《元宇宙》範例\r\n\r\n原文：「元宇宙可以透過通用技術來傳遞差異化的體驗。韓國的一個紀錄片，媽媽與過世的女兒相見並且共度時光的虛擬融合故事。」\r\n評論：「像是運用人工智慧呈現出現實世界中已經不存在的女兒，並使用觸感手套進行互動，就好像真的跟女兒相見一樣，是一個沉浸感極高的體驗。」\r\n![04_節錄評論法-元宇宙範例.png](04_節錄評論法-元宇宙範例.png)\r\n\r\n## (5:54)–(6:11) 節錄評論法：完整筆記長怎樣\r\n\r\n一本書大概摘錄 10~20 則筆記，用數位筆記條列式一行一行列下來：頁數、原文、自己的評論。\r\n![05_節錄評論法-完整摘錄示範.png](05_節錄評論法-完整摘錄示範.png)\r\n\r\n## (6:11)–(6:47) 一問一答法的三個提問\r\n\r\n讀完一本書，想像要跟親友分享，試著回答：我為什麼想讀這本書？用一句話說明這本書？我會推薦這本書給誰？\r\n放在節錄評論法之後問，是因為前面已經複習過一輪，這時候腦袋裡才有料可以回答。\r\n![06_一問一答法-三個提問.png](06_一問一答法-三個提問.png)\r\n\r\n## (7:39)–(8:57) 一問一答法：《元宇宙》範例\r\n\r\n為什麼想讀：臉書改名 Meta，好奇背後的商機。\r\n一句話總結：元宇宙的變革會滲透到生活每個角落，未來對經濟、產業、社會都有重大影響。\r\n推薦給誰：對元宇宙還很陌生的人，以及在找商機的投資人。\r\n![07_一問一答法-元宇宙範例.png](07_一問一答法-元宇宙範例.png)\r\n\r\n## (9:58)–(12:53) 做筆記的新舊思維對比\r\n\r\n舊思維：先思考清楚才記錄／重複閱讀抄寫、寫得越詳細越好／記錄知識本身。\r\n新思維：先記錄、後思考（打字的過程思考自然會發生）／用自己的話闡述（重新消化成自己的東西）／發展跟自己有關的想法，而不只侷限於原本的知識本身。\r\n![08_做筆記新舊思維-先記錄後思考.png](08_做筆記新舊思維-先記錄後思考.png)\r\n\r\n## (12:53)–(13:35) 做筆記方法總結\r\n\r\n節錄評論法＋一問一答法：簡單好上手、不仰賴靈感、做筆記＝複習＋學習＋寫作本身。\r\n![09_做筆記訣竅-兩方法總覽.png](09_做筆記訣竅-兩方法總覽.png)\r\n\r\n## (14:53)–(17:16) 寫作不是從一張空白紙開始\r\n\r\n舊方法（由上而下）：先定文章主題 → 寫大綱項目 → 依照順序寫，容易卡關，或為了填大綱硬寫不熟的內容。\r\n新方法（由下而上）：先做筆記、寫想法 → 整理和歸納 → 分類與主題自然浮現、自己收斂出來，這才是真正感興趣、有料可寫的主題。\r\n![10_寫作框架-由下而上示意.png](10_寫作框架-由下而上示意.png)\r\n\r\n## (17:16)–(17:37) 一句話總結\r\n\r\n做筆記＝複習＋學習＋寫作；寫作不是從一張空白紙開始，寫作是從一則筆記開始的。\r\n![11_寫作框架-從筆記開始總結.png](11_寫作框架-從筆記開始總結.png)\r\n\r\n## (17:37)–(18:25) 萬能寫作框架\r\n\r\n觀點：這本書在說什麼？你有什麼收穫？\r\n案例：一個令你印象深刻的問題、案例或故事。\r\n總結：對一段話發表想法、你推薦這本書給誰？\r\n![12_萬能寫作框架-觀點案例總結.png](12_萬能寫作框架-觀點案例總結.png)\r\n\r\n## (18:49)–(20:16) 把筆記素材套進框架\r\n\r\n節錄評論法裡的「頁數＋原文故事＋自己的話」可以放進觀點或案例；印象深刻的金句可以放進總結。一問一答法的三個答案剛好對應觀點、案例、總結三個位置——筆記寫完後，寫作只是把素材排列組合、加上連接詞串起來而已。\r\n![13_萬能寫作框架-筆記套入框架.png](13_萬能寫作框架-筆記套入框架.png)\r\n\r\n## (22:36)–(24:33) 寫作的新舊思維對比\r\n\r\n舊思維：寫作跟筆記是兩碼子事／由上而下規劃／要有靈感和文采才能下筆。\r\n新思維：筆記就是寫作／由下而上排列組合／靈感和文采是從既有的筆記裡浮現出來的，不用等靈感才開始寫。\r\n![14_寫作新舊思維-筆記就是寫作.png](14_寫作新舊思維-筆記就是寫作.png)\r\n",
+    "images": {
+      "01_概覽-兩大主題.png": "3a36830c-2de7-81c4-ad1c-00b28c8b05b3",
+      "02_做筆記訣竅-簡單上手不靠靈感.png": "3a36830c-2de7-81ea-928d-00b255c8e7ee",
+      "03_節錄評論法-三欄框架.png": "3a36830c-2de7-815c-96fa-00b2bd28e0a9",
+      "04_節錄評論法-元宇宙範例.png": "3a36830c-2de7-8140-9f5d-00b250127e77",
+      "05_節錄評論法-完整摘錄示範.png": "3a36830c-2de7-81a7-a395-00b2bc367b29",
+      "06_一問一答法-三個提問.png": "3a36830c-2de7-8184-b5f7-00b2e0eae373",
+      "07_一問一答法-元宇宙範例.png": "3a36830c-2de7-81bb-922e-00b2c38a434b",
+      "08_做筆記新舊思維-先記錄後思考.png": "3a36830c-2de7-81ab-8457-00b27f33c32d",
+      "09_做筆記訣竅-兩方法總覽.png": "3a36830c-2de7-814b-b6f2-00b2909fa04f",
+      "10_寫作框架-由下而上示意.png": "3a36830c-2de7-81fa-b026-00b2528a1258",
+      "11_寫作框架-從筆記開始總結.png": "3a36830c-2de7-81d4-96ae-00b2511827d5",
+      "12_萬能寫作框架-觀點案例總結.png": "3a36830c-2de7-8152-a6ba-00b22bef103e",
+      "13_萬能寫作框架-筆記套入框架.png": "3a36830c-2de7-81c9-9280-00b2ef56c71c"
+    },
+    "direction": "push",
+    "updatedAt": "2026-07-20T14:23:01.896Z"
+  }
+}

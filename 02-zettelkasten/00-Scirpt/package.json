@@ -1,0 +1,8 @@
+{
+  "name": "zettelkasten-new-card",
+  "private": true,
+  "description": "互動式建立 02-zettelkasten/01-Inbox 底下的新卡片，帶好 title/date/type/tags frontmatter。",
+  "dependencies": {
+    "prompts": "^2.4.2"
+  }
+}
