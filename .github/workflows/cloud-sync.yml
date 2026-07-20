@@ -11,6 +11,12 @@ on:
 permissions:
   contents: write
 
+env:
+  # runner 預設用 UTC，`date +%F` 若不校正時區，會在台灣時間 06:00（= UTC 22:00 前一天）
+  # 跑出「前一天」的日期，導致 sub-daily-check 整理錯天的資料。強制用台灣時區讓所有
+  # `date` 呼叫（包含 Claude Code 內部的 skill 執行與下面的 commit 步驟）都對齊。
+  TZ: Asia/Taipei
+
 jobs:
   cloud-sync:
     runs-on: ubuntu-latest
@@ -49,7 +55,7 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add daily-plan/ schedule/計劃總覽.md schedule/schedule-log.md schedule/.caldav-sync-state.json trash-can/ 2>/dev/null || true
           if ! git diff --cached --quiet; then
-            git commit -m "core-cloud-sync: $(date -u +%F) 自動整理"
+            git commit -m "core-cloud-sync: $(date +%F) 自動整理"
             git push
           else
             echo "沒有變動，不用 commit。"
