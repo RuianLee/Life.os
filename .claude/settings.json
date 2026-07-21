@@ -2,17 +2,18 @@
   "permissions": {
     "allow": [
       "Read(**)",
-      "Write(daily-plan/**)",
-      "Write(schedule/**)",
-      "Write(trash-can/**)",
-      "Edit(schedule/**)",
+      "Write(02-zettelkasten/03-Calendar/**)",
+      "Write(03-schedule/**)",
+      "Write(05-trash-can/**)",
+      "Edit(03-schedule/**)",
       "Bash(mv:*)",
       "Bash(mkdir:*)",
       "Bash(date:*)",
       "Bash(shasum:*)",
       "Bash(node .claude/skills/sub-apple-sync/scripts/sync.js:*)",
       "Bash(node .claude/skills/sub-apple-sync/scripts/sync_notes.js:*)",
-      "Bash(node .claude/skills/sub-caldav-sync/scripts/sync_caldav.js:*)"
+      "Bash(node .claude/skills/sub-caldav-sync/scripts/sync_caldav.js:*)",
+      "Bash(node .claude/skills/sub-notion-calendar-sync/scripts/sync_notion_calendar.js:*)"
     ]
   }
 }

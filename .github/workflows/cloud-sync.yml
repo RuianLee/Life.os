@@ -1,8 +1,9 @@
 name: core-cloud-sync
 
 # 每天台灣時間 06:00（= UTC 22:00 前一天）自動整理今天待辦，並把有時間的任務同步進 iCloud「daily」
-# 行事曆——不需要本機 Mac 開機/登入，走 CalDAV 直連 iCloud。Reminders/Notes 不在這條路徑裡（見
-# .claude/skills/sub-caldav-sync/SKILL.md 的原因說明），仍然要在本機手動跑 /core-daily-sync。
+# 行事曆——不需要本機 Mac 開機/登入，走 CalDAV 直連 iCloud，同時把當天待辦單向鏡像進 Notion
+# 「Daily-Sync」資料庫。Reminders/Notes 不在這條路徑裡（見 .claude/skills/sub-caldav-sync/SKILL.md
+# 的原因說明），仍然要在本機手動跑 /core-daily-sync。
 on:
   schedule:
     - cron: '0 22 * * *'
@@ -10,6 +11,12 @@ on:
 
 permissions:
   contents: write
+
+env:
+  # runner 預設用 UTC，`date +%F` 若不校正時區，會在台灣時間 06:00（= UTC 22:00 前一天）
+  # 跑出「前一天」的日期，導致 sub-daily-check 整理錯天的資料。強制用台灣時區讓所有
+  # `date` 呼叫（包含 Claude Code 內部的 skill 執行與下面的 commit 步驟）都對齊。
+  TZ: Asia/Taipei
 
 jobs:
   cloud-sync:
@@ -23,6 +30,10 @@ jobs:
 
       - name: Install sub-caldav-sync dependencies
         working-directory: .claude/skills/sub-caldav-sync/scripts
+        run: npm ci
+
+      - name: Install sub-notion-calendar-sync dependencies
+        working-directory: .claude/skills/sub-notion-calendar-sync/scripts
         run: npm ci
 
       - name: Install Claude Code CLI
@@ -40,6 +51,8 @@ jobs:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           APPLE_ID_EMAIL: ${{ secrets.APPLE_ID_EMAIL }}
           APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_DAILY_SYNC_DATABASE_ID: ${{ secrets.NOTION_DAILY_SYNC_DATABASE_ID }}
         run: |
           claude -p "/core-cloud-sync" --permission-mode acceptEdits
 
@@ -47,9 +60,9 @@ jobs:
         run: |
           git config user.name "core-cloud-sync bot"
           git config user.email "actions@users.noreply.github.com"
-          git add daily-plan/ schedule/計劃總覽.md schedule/schedule-log.md schedule/.caldav-sync-state.json trash-can/ 2>/dev/null || true
+          git add 02-zettelkasten/03-Calendar/ schedule/計劃總覽.md schedule/schedule-log.md schedule/.caldav-sync-state.json 03-schedule/00-設定檔/.notion-calendar-sync-state.json trash-can/ 2>/dev/null || true
           if ! git diff --cached --quiet; then
-            git commit -m "core-cloud-sync: $(date -u +%F) 自動整理"
+            git commit -m "core-cloud-sync: $(date +%F) 自動整理"
             git push
           else
             echo "沒有變動，不用 commit。"
