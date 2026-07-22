@@ -1,9 +1,7 @@
 .DS_Store
-行程/.ios-sync-state.json
-行程/.notes-sync-state.json
 
 # LaTeX 編譯產物
 *.aux
 *.log
 *.synctex.gz
-project/personal-site/
+01-main-project/software-project/personal-site/

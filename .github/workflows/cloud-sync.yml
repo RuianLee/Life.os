@@ -1,8 +1,8 @@
 name: core-cloud-sync
 
 # 每天台灣時間 06:00（= UTC 22:00 前一天）自動整理今天待辦，並把有時間的任務同步進 iCloud「daily」
-# 行事曆——不需要本機 Mac 開機/登入，走 CalDAV 直連 iCloud，同時把當天待辦單向鏡像進 Notion
-# 「Daily-Sync」資料庫。Reminders/Notes 不在這條路徑裡（見 .claude/skills/sub-caldav-sync/SKILL.md
+# 行事曆——不需要本機 Mac 開機/登入，走 CalDAV 直連 iCloud，同時把待辦逐筆單向鏡像進 Notion
+# 「睿恩的行動任務庫（Action）」資料庫。Reminders/Notes 不在這條路徑裡（見 .claude/skills/sub-caldav-sync/SKILL.md
 # 的原因說明），仍然要在本機手動跑 /core-daily-sync。
 on:
   schedule:
@@ -32,8 +32,8 @@ jobs:
         working-directory: .claude/skills/sub-caldav-sync/scripts
         run: npm ci
 
-      - name: Install sub-notion-calendar-sync dependencies
-        working-directory: .claude/skills/sub-notion-calendar-sync/scripts
+      - name: Install sub-notion-action-sync dependencies
+        working-directory: .claude/skills/sub-notion-action-sync/scripts
         run: npm ci
 
       - name: Install Claude Code CLI
@@ -52,7 +52,7 @@ jobs:
           APPLE_ID_EMAIL: ${{ secrets.APPLE_ID_EMAIL }}
           APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
-          NOTION_DAILY_SYNC_DATABASE_ID: ${{ secrets.NOTION_DAILY_SYNC_DATABASE_ID }}
+          NOTION_ACTION_DATABASE_ID: ${{ secrets.NOTION_ACTION_DATABASE_ID }}
         run: |
           claude -p "/core-cloud-sync" --permission-mode acceptEdits
 
@@ -60,7 +60,7 @@ jobs:
         run: |
           git config user.name "core-cloud-sync bot"
           git config user.email "actions@users.noreply.github.com"
-          git add 02-zettelkasten/03-Calendar/ schedule/計劃總覽.md schedule/schedule-log.md schedule/.caldav-sync-state.json 03-schedule/00-設定檔/.notion-calendar-sync-state.json trash-can/ 2>/dev/null || true
+          git add 02-zettelkasten/03-Calendar/ schedule/計劃總覽.md schedule/schedule-log.md schedule/.caldav-sync-state.json 03-schedule/00-設定檔/.notion-action-sync-state.json trash-can/ 2>/dev/null || true
           if ! git diff --cached --quiet; then
             git commit -m "core-cloud-sync: $(date +%F) 自動整理"
             git push
