@@ -21,11 +21,17 @@
  *
  * 所以 Reminders 跟 Notes 一樣，維持交給本機的 /core-daily-sync（sub-apple-sync）處理。
  *
- * Usage: node sync_caldav.js <path-to-tasks.json>
+ * Usage:
+ *   node sync_caldav.js <path-to-tasks.json>
+ *   node sync_caldav.js --clear [state-path]   清空 state 檔追蹤的所有事件（緊急收回用）
  *
  * 需要的環境變數：
  *   APPLE_ID_EMAIL              Apple ID 信箱
  *   APPLE_APP_SPECIFIC_PASSWORD 在 appleid.apple.com 產生的「App 專用密碼」（不是登入密碼）
+ *
+ * 可選環境變數（給第二條 pipeline，例如 guest-schedule-sync，重用這支腳本用的）：
+ *   CALDAV_STATE_PATH     覆蓋預設的 state 檔路徑
+ *   CALDAV_CALENDAR_NAME  覆蓋預設要寫入的 iCloud 行事曆名稱（預設 'daily'）
  */
 
 const fs = require('fs');
@@ -34,12 +40,17 @@ const crypto = require('crypto');
 const { DAVClient } = require('tsdav');
 
 const REPO_ROOT = path.resolve(__dirname, '../../../..');
-const STATE_PATH = path.join(REPO_ROOT, 'schedule', '.caldav-sync-state.json');
+// 注意：資料夾早期叫 schedule/，現在已改名成 03-schedule/00-設定檔/，這裡的預設值
+// 之前沒跟著改，導致寫死指向一個不存在的路徑——雲端 CalDAV 同步的去重可能因此悄悄失效
+// （每次都讀到空 state，等於每次都當新事件處理）。這裡修正成實際路徑。
+const STATE_PATH = process.env.CALDAV_STATE_PATH
+  ? path.resolve(process.env.CALDAV_STATE_PATH)
+  : path.join(REPO_ROOT, '03-schedule', '00-設定檔', '.caldav-sync-state.json');
 // 本機版 sub-apple-sync 的狀態檔：兩條路徑都會寫進同一個 iCloud「daily」行事曆，
 // 這裡拿來判斷「這個事件是不是本機已經同步過了」，避免使用者剛手動跑完本機版、
-// 當天稍晚雲端排程又跑一次，在 Calendar 建出重複事件。
-const APPLE_STATE_PATH = path.join(REPO_ROOT, 'schedule', '.apple-sync-state.json');
-const CALENDAR_NAME = 'daily';
+// 當天稍晚雲端排程又跑一次，在 Calendar 建出重複事件。同樣修正成實際路徑。
+const APPLE_STATE_PATH = path.join(REPO_ROOT, '03-schedule', '00-設定檔', '.apple-sync-state.json');
+const CALENDAR_NAME = process.env.CALDAV_CALENDAR_NAME || 'daily';
 const UID_SUFFIX = '@life.os';
 
 function readJSON(filePath, fallback) {
@@ -52,7 +63,7 @@ function writeJSON(filePath, obj) {
 }
 
 function contentHash(task) {
-  const raw = [task.title, task.date, task.time || '', task.notes || ''].join('|');
+  const raw = [task.title, task.date, task.time || '', task.endTime || '', task.notes || ''].join('|');
   return crypto.createHash('sha1').update(raw, 'utf8').digest('hex');
 }
 
@@ -83,7 +94,11 @@ function taipeiToUtcDate(dateStr, timeStr) {
 
 function buildEventIcs(task) {
   const startDate = taipeiToUtcDate(task.date, task.time);
-  const endDate = new Date(startDate.getTime() + 60 * 60 * 1000); // 跟本機版一樣，預設 1 小時長度
+  // 有 endTime（例如 guest-schedule-sync 合併相鄰時段後的區塊）就用實際區間，
+  // 沒有就跟本機版一樣，預設 1 小時長度。
+  const endDate = task.endTime
+    ? taipeiToUtcDate(task.date, task.endTime)
+    : new Date(startDate.getTime() + 60 * 60 * 1000);
 
   return [
     'BEGIN:VCALENDAR',
@@ -143,10 +158,24 @@ async function deleteEvent(client, entry) {
   }
 }
 
+async function clearState(client, statePathOverride) {
+  const statePath = statePathOverride ? path.resolve(statePathOverride) : STATE_PATH;
+  const state = readJSON(statePath, {});
+  let removed = 0;
+  for (const id of Object.keys(state)) {
+    await deleteEvent(client, state[id]);
+    delete state[id];
+    removed++;
+  }
+  writeJSON(statePath, state);
+  console.log(`sub-caldav-sync --clear 完成：清除 ${removed} 筆事件（state: ${statePath}）。`);
+}
+
 async function main() {
   const tasksArg = process.argv[2];
   if (!tasksArg) {
     console.error('Usage: node sync_caldav.js <path-to-tasks.json>');
+    console.error('       node sync_caldav.js --clear [state-path]');
     process.exit(1);
   }
 
@@ -155,6 +184,19 @@ async function main() {
   if (!username || !password) {
     console.error('請設定 APPLE_ID_EMAIL / APPLE_APP_SPECIFIC_PASSWORD 環境變數。');
     process.exit(1);
+  }
+
+  if (tasksArg === '--clear') {
+    // 緊急收回用：把某個 state 檔追蹤到的所有事件一次從 iCloud 清掉，不動 tasks.json。
+    const client = new DAVClient({
+      serverUrl: 'https://caldav.icloud.com',
+      credentials: { username, password },
+      authMethod: 'Basic',
+      defaultAccountType: 'caldav',
+    });
+    await client.login();
+    await clearState(client, process.argv[3]);
+    return;
   }
 
   const tasksPath = path.resolve(tasksArg);

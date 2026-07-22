@@ -1,0 +1,72 @@
+name: guest-schedule-sync
+
+# 吳莉雯姊妹專屬的行程同步：她的 iOS 捷徑把整週行程截圖/PDF 直接上傳到
+# 03-schedule/02-吳莉雯/，一 push 就自動觸發，跑 /core-guest-schedule-sync 把新檔案
+# 拆解成行事曆事件，透過 CalDAV 直接寫進她自己的 iCloud 行事曆（不需要她碰任何 GitHub UI）。
+# 跟 cloud-sync.yml（brianlee 自己的每日整理）完全平行、互不觸發、互不影響——
+# 這條線只認 03-schedule/02-吳莉雯/ 這一個資料夾。
+on:
+  push:
+    paths:
+      - '03-schedule/02-吳莉雯/**'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: '只萃取、不寫進她的 iCloud 行事曆（先核對抓取結果再正式跑）'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+env:
+  TZ: Asia/Taipei
+
+jobs:
+  guest-schedule-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install sub-caldav-sync dependencies
+        working-directory: .claude/skills/sub-caldav-sync/scripts
+        run: npm ci
+
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Trust workspace for Claude Code
+        # 全新 runner 每次都要重新信任這個目錄，不然 .claude/settings.json 的 permissions.allow
+        # 會被忽略、非互動環境又沒辦法跳出確認對話框讓人按「同意」，會卡死。
+        run: |
+          mkdir -p ~/.claude
+          printf '{"projects": {"%s": {"hasTrustDialogAccepted": true}}}' "$GITHUB_WORKSPACE" > ~/.claude.json
+
+      - name: Run core-guest-schedule-sync
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          APPLE_ID_EMAIL: ${{ secrets.GUEST1_APPLE_ID_EMAIL }}
+          APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.GUEST1_APPLE_APP_SPECIFIC_PASSWORD }}
+          CALDAV_STATE_PATH: 03-schedule/00-設定檔/.guest-liwen-caldav-sync-state.json
+          CALDAV_CALENDAR_NAME: daily
+          # push 觸發（她實際上傳）一律正式跑；手動 workflow_dispatch 預設先 dry-run，
+          # 人工核對 events-latest.json 抓取正確後，再手動關掉 dry_run 重跑一次。
+          GUEST_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run || 'false' }}
+        run: |
+          claude -p "/core-guest-schedule-sync" --permission-mode acceptEdits
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "guest-schedule-sync bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add "03-schedule/02-吳莉雯/" "03-schedule/00-設定檔/.guest-liwen-caldav-sync-state.json" 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "guest-schedule-sync: $(date +%F) 自動同步"
+            git push
+          else
+            echo "沒有變動，不用 commit。"
+          fi
