@@ -26,7 +26,7 @@
   - `00-Scirpt/` — `new-card.js`：互動式 CLI，在 `01-Inbox/` 底下建立一張新卡片 md（依序問標題／筆記類型／tag），呼應 ACCESS「新筆記先進 Inbox」的概念
   - `01-Inbox/` — 收件匣，新筆記先丟這裡，等有空再一次性批次分類到 Atlas/Calendar/Card/Extra/Source/Space
   - `02-Atlas/` — MOC（地圖型筆記，分類匯總用），目前為空，尚未從舊 second-brain/ 分類容器搬入內容
-  - `03-Calendar/<YYYY-MM-DD>/`（原 daily-plan/）— `sub-daily-check` 的產出：人讀的 `<日期>.md` + 結構化 `tasks.json`
+  - `03-Calendar/<YYYY-MM-DD>/`（原 daily-plan/）— `sub-daily-check` 的產出：`tasks.json`（結構化，供 sub-apple-sync/sub-caldav-sync/sub-notion-calendar-sync 消費，含今天／明天／未來 7 天）＋人讀的 `<日期>.md`（當天待辦「大表」，一張表格連結到 `tasks/` 底下每筆今天任務各自的卡片檔案）＋ `tasks/`（當天每筆任務各一張 `.md` 卡片，含 frontmatter）。這個「一任務一卡片＋大表索引」格式預設只套用到改版後新產生的日期，改版前既有的舊資料夾預設維持原本純 checkbox 條列格式，不主動回溯轉換；使用者可以指名要求把特定舊資料夾也轉成新格式（例如 `2026-07-20/` 已依使用者要求轉換）。已實測跟 `sub-notion-calendar-sync` 相容
   - `04-Card/` — 卡片（自己消化過的永久筆記），目前為空
   - `05-Extra/` — 範本等額外資料，目前為空
   - `06-Source/` — 文獻筆記來源，目前為空
