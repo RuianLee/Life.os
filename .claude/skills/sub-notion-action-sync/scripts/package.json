@@ -1,0 +1,8 @@
+{
+  "name": "sub-notion-action-sync",
+  "private": true,
+  "description": "把 02-zettelkasten/03-Calendar/<date>/tasks.json 單向同步進 Notion「睿恩的行動任務庫（Action）」資料庫（repo -> Notion，一筆任務一列）。",
+  "dependencies": {
+    "@notionhq/client": "^5.23.2"
+  }
+}

@@ -13,7 +13,7 @@
       "Bash(node .claude/skills/sub-apple-sync/scripts/sync.js:*)",
       "Bash(node .claude/skills/sub-apple-sync/scripts/sync_notes.js:*)",
       "Bash(node .claude/skills/sub-caldav-sync/scripts/sync_caldav.js:*)",
-      "Bash(node .claude/skills/sub-notion-calendar-sync/scripts/sync_notion_calendar.js:*)"
+      "Bash(node .claude/skills/sub-notion-action-sync/scripts/sync_notion_action.js:*)"
     ]
   }
 }
