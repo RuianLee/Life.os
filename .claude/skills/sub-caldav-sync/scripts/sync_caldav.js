@@ -111,6 +111,11 @@ function buildEventIcs(task) {
     `DTEND:${formatUtcIcs(endDate)}`,
     `SUMMARY:${icsEscape(task.title)}`,
     `DESCRIPTION:${icsEscape(task.notes)}`,
+    'BEGIN:VALARM',
+    'ACTION:DISPLAY',
+    `DESCRIPTION:${icsEscape(task.title)}`,
+    'TRIGGER:-PT30M',
+    'END:VALARM',
     'END:VEVENT',
     'END:VCALENDAR',
   ].join('\r\n');

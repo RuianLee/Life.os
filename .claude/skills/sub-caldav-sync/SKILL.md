@@ -19,6 +19,7 @@ description: 把 sub-daily-check 產出的 02-zettelkasten/03-Calendar/<date>/ta
    - 任務如果從 tasks.json 消失（日期過了、來源檔案被搬到 trash-can），會自動刪除對應的 CalDAV 事件。
    - `Reminders` 型任務（`type === "reminder"`）完全跳過不處理，因為這個帳號真正在用的 Reminders 清單透過 CalDAV 完全存取不到（實測對 calendar-home-set 做原始 PROPFIND，找不到任何一個使用者真正在用的清單，唯一找得到的 VTODO collection 叫「提醒事項 ⚠️」——這個警告符號是 Apple 伺服器自己回的名稱，幾乎可以確定是官方標記的舊版相容殘留物，寫進去 iCloud 會接受但 Reminders.app 完全不會顯示）。這是 Apple 這幾年把 Reminders 換成私有同步協定的已知限制，不是這支腳本能力不足。
    - `Notes` 完全不處理，Apple Notes 沒有公開的 CalDAV/API，只能靠本機 osascript。
+   - 每筆事件固定帶一個 30 分鐘前的 `VALARM`（`TRIGGER:-PT30M`）。因為 `contentHash` 沒有把這個算進去，**已經同步過、內容沒變的舊事件不會自動補上提醒**——只有新建的事件或內容有變動而觸發更新的事件才會帶這個提醒；要讓所有既有事件都補上，需要清掉對應的 state 檔（`--clear`）讓它們全部視為新建重跑一次。
 4. 把腳本印出的統計（新增/更新/略過/清除各幾筆）用一兩句話回報，不用重新複述每一筆任務內容。並提醒使用者：Reminders 跟 Notes 沒有被這條路徑處理，仍然只能靠手動跑 `/core-daily-sync`（本機、含 sub-apple-sync）才會同步。
 
 ## 注意事項
