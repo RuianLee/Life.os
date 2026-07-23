@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 [
   {"id": "ab654995210b", "title": "起床", "date": "2026-06-29", "time": "05:30", "endTime": "06:00", "type": "event", "source_file": "03-schedule/02-吳莉雯/2026-07-23-12-.jpeg", "notes": ""},
   {"id": "4915087e7745", "title": "晨興/讀經", "date": "2026-06-29", "time": "06:00", "endTime": "06:30", "type": "event", "source_file": "03-schedule/02-吳莉雯/2026-07-23-12-.jpeg", "notes": ""},
@@ -170,4 +168,3 @@
   {"id": "f5c6ee29fb5e", "title": "寢室晚禱", "date": "2026-07-26", "time": "22:10", "endTime": "22:25", "type": "event", "source_file": "03-schedule/02-吳莉雯/2026-07-23-12-.jpeg", "notes": ""},
   {"id": "7ff486d838e8", "title": "寢室就寢", "date": "2026-07-26", "time": "22:30", "endTime": "23:00", "type": "event", "source_file": "03-schedule/02-吳莉雯/2026-07-23-12-.jpeg", "notes": ""}
 ]
->>>>>>> a9222997df9a13dc6d1051f6279514e55e8e3336
