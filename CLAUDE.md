@@ -37,6 +37,7 @@
   - `schedule-log.md` — 記錄每次整理/搬移的判斷
   - `01-2026召會生活/`（原 2026召會生活/）— 2026 年召會生活相關的排程資料（例如文山一大區夏季訓練時間表）
   - `02-吳莉雯/`（新增）— 姊妹專屬的行程表上傳收件匣，跟 brianlee 自己的每日行程/Notion pipeline 完全隔離的獨立 MVP：她用手機上的 iOS 捷徑把整週行程截圖/PDF 直接上傳到這裡，一 push 就觸發 `.github/workflows/guest-schedule-sync.yml` 跑 `/core-guest-schedule-sync`，逐日拆解半小時時間區塊、合併相鄰同名稱區塊，透過 CalDAV 直接寫進她自己的 iCloud「daily」行事曆，不經過 `00-計劃總覽.md`／Notion／trash-can 任何一步
+  - `03-第二期訓練/`（新增）— 「臺灣福音工作全時間訓練·第二期訓練」的行程收件匣，李睿恩本人這次開訓後每週的課程表/服事表截圖放在這裡（例如 `第0周/2026F第一年第0週.jpg` 開訓課程表、`飯食招待服事表.jpg`），用途跟 `01-2026召會生活/` 相同、會進 `sub-daily-check` 掃描範圍，底下同樣有 `原始檔/` 子資料夾存放已萃取成 `.md` 的原圖
   - 每個分類子資料夾底下可能有 `原始檔/` 子資料夾，存放已經萃取成同層 `.md` 的原始截圖/PDF，見 `.claude/skills/sub-daily-check/SKILL.md` 的「0a. 讀取 schedule/」
 - **04-tools/**（原 productivity/ 與 shortcut/ 合併，`Doc分享點名需求/` 空資料夾未沿用）
   - `01-LaTeX/`（原 productivity/LaTeX學習/）— LaTeX 入門教學筆記
